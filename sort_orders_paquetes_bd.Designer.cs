@@ -40,6 +40,12 @@
             this.account_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.programing = new MetroFramework.Controls.MetroButton();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.no_select = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.comboAnio = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.comboMeses = new MetroFramework.Controls.MetroComboBox();
             this.add = new MetroFramework.Controls.MetroButton();
             this.treintauno = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.treinta = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
@@ -82,12 +88,6 @@
             this.destino_combo = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.calendar_sort_bd = new Syncfusion.WinForms.Input.SfCalendar();
-            this.no_select = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.comboAnio = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.comboMeses = new MetroFramework.Controls.MetroComboBox();
             this.metroPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.registroFechasMedia)).BeginInit();
             this.metroPanel2.SuspendLayout();
@@ -265,6 +265,86 @@
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // no_select
+            // 
+            this.no_select.Location = new System.Drawing.Point(461, 35);
+            this.no_select.Name = "no_select";
+            this.no_select.Size = new System.Drawing.Size(135, 23);
+            this.no_select.TabIndex = 44;
+            this.no_select.Text = "No seleccionar ninguno";
+            this.no_select.UseSelectable = true;
+            this.no_select.Click += new System.EventHandler(this.no_select_Click);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(352, 35);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(103, 23);
+            this.metroButton1.TabIndex = 43;
+            this.metroButton1.Text = "Seleccionar todo";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(173, 13);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(113, 19);
+            this.metroLabel7.TabIndex = 41;
+            this.metroLabel7.Text = "Selecciona el año:";
+            this.metroLabel7.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // comboAnio
+            // 
+            this.comboAnio.FormattingEnabled = true;
+            this.comboAnio.ItemHeight = 23;
+            this.comboAnio.Items.AddRange(new object[] {
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023"});
+            this.comboAnio.Location = new System.Drawing.Point(173, 35);
+            this.comboAnio.Name = "comboAnio";
+            this.comboAnio.Size = new System.Drawing.Size(158, 29);
+            this.comboAnio.TabIndex = 42;
+            this.comboAnio.UseSelectable = true;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(9, 13);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(115, 19);
+            this.metroLabel3.TabIndex = 39;
+            this.metroLabel3.Text = "Selecciona el mes:";
+            this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // comboMeses
+            // 
+            this.comboMeses.FormattingEnabled = true;
+            this.comboMeses.ItemHeight = 23;
+            this.comboMeses.Items.AddRange(new object[] {
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"});
+            this.comboMeses.Location = new System.Drawing.Point(9, 35);
+            this.comboMeses.Name = "comboMeses";
+            this.comboMeses.Size = new System.Drawing.Size(158, 29);
+            this.comboMeses.TabIndex = 40;
+            this.comboMeses.UseSelectable = true;
+            this.comboMeses.SelectedIndexChanged += new System.EventHandler(this.comboMeses_SelectedIndexChanged_1);
             // 
             // add
             // 
@@ -838,85 +918,6 @@
             this.calendar_sort_bd.TabIndex = 33;
             this.calendar_sort_bd.Text = "sfCalendar1";
             this.calendar_sort_bd.DoubleClick += new System.EventHandler(this.calendar_sort_bd_DoubleClick);
-            // 
-            // no_select
-            // 
-            this.no_select.Location = new System.Drawing.Point(461, 35);
-            this.no_select.Name = "no_select";
-            this.no_select.Size = new System.Drawing.Size(135, 23);
-            this.no_select.TabIndex = 44;
-            this.no_select.Text = "No seleccionar ninguno";
-            this.no_select.UseSelectable = true;
-            this.no_select.Click += new System.EventHandler(this.no_select_Click);
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(352, 35);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(103, 23);
-            this.metroButton1.TabIndex = 43;
-            this.metroButton1.Text = "Seleccionar todo";
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(173, 13);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(113, 19);
-            this.metroLabel7.TabIndex = 41;
-            this.metroLabel7.Text = "Selecciona el año:";
-            this.metroLabel7.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // comboAnio
-            // 
-            this.comboAnio.FormattingEnabled = true;
-            this.comboAnio.ItemHeight = 23;
-            this.comboAnio.Items.AddRange(new object[] {
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023"});
-            this.comboAnio.Location = new System.Drawing.Point(173, 35);
-            this.comboAnio.Name = "comboAnio";
-            this.comboAnio.Size = new System.Drawing.Size(158, 29);
-            this.comboAnio.TabIndex = 42;
-            this.comboAnio.UseSelectable = true;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(9, 13);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(115, 19);
-            this.metroLabel3.TabIndex = 39;
-            this.metroLabel3.Text = "Selecciona el mes:";
-            this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // comboMeses
-            // 
-            this.comboMeses.FormattingEnabled = true;
-            this.comboMeses.ItemHeight = 23;
-            this.comboMeses.Items.AddRange(new object[] {
-            "Enero",
-            "Febrero",
-            "Marzo",
-            "Abril",
-            "Mayo",
-            "Junio",
-            "Julio",
-            "Agoto",
-            "Septiembre",
-            "Octubre",
-            "Noviembre",
-            "Diciembre"});
-            this.comboMeses.Location = new System.Drawing.Point(9, 35);
-            this.comboMeses.Name = "comboMeses";
-            this.comboMeses.Size = new System.Drawing.Size(158, 29);
-            this.comboMeses.TabIndex = 40;
-            this.comboMeses.UseSelectable = true;
             // 
             // sort_orders_paquetes_bd
             // 

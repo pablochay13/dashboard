@@ -1,11 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
-using Syncfusion.WinForms.Input;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,13 +11,13 @@ using System.Windows.Forms;
 
 namespace dashboard_medios
 {
-    public partial class calendar : MetroFramework.Forms.MetroForm
+    public partial class calendar_so_paquetes_bd : MetroFramework.Forms.MetroForm
     {
         MySqlConnection con = new MySqlConnection(variables.Sentencia);
 
         string fecha_evento = "";
 
-        public calendar()
+        public calendar_so_paquetes_bd()
         {
             InitializeComponent();
 
@@ -44,7 +42,7 @@ namespace dashboard_medios
                     calendar_full.SelectedDates.Clear();
 
                     con.Open();
-                    string sql = "SELECT * FROM sort_orders WHERE posicion='" + posicion_selected + "'AND destino='" + destino_combo.Text + "' ";
+                    string sql = "SELECT * FROM sort_orders_paquetes WHERE posicion='" + posicion_selected + "'AND destino='" + destino_combo.Text + "' ";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     MySqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
@@ -69,7 +67,7 @@ namespace dashboard_medios
                     calendar_full.SelectedDates.Clear();
 
                     con.Open();
-                    string sql = "SELECT * FROM sort_orders WHERE posicion='" + posicion_selected + "'AND destino='" + destino_combo.Text + "' ";
+                    string sql = "SELECT * FROM sort_orders_paquetes WHERE posicion='" + posicion_selected + "'AND destino='" + destino_combo.Text + "' ";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     MySqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
@@ -93,8 +91,7 @@ namespace dashboard_medios
                     calendar_full.SelectedDates.Clear();
 
                     con.Open();
-                    //string sql = "SELECT * FROM sort_orders WHERE posicion='Primera' AND destino='Tulum' ";
-                    string sql = "SELECT * FROM sort_orders WHERE posicion='" + posicion_selected + "'AND destino='" + destino_combo.Text + "' ";
+                    string sql = "SELECT * FROM sort_orders_paquetes WHERE posicion='" + posicion_selected + "'AND destino='" + destino_combo.Text + "' ";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     MySqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
@@ -139,7 +136,12 @@ namespace dashboard_medios
             }
         }
 
-        private void destino_combo_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void calendar_so_paquetes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void destino_combo_SelectedIndexChanged(object sender, EventArgs e)
         {
             con.Close();
 
@@ -148,7 +150,7 @@ namespace dashboard_medios
             calendar_full.SelectedDates.Clear();
 
             con.Open();
-            string sql = "SELECT * FROM sort_orders WHERE posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ";
+            string sql = "SELECT * FROM sort_orders_paquetes WHERE posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ";
             MySqlCommand cmd = new MySqlCommand(sql, con);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -161,7 +163,7 @@ namespace dashboard_medios
             con.Close();
         }
 
-        private void posicion_combo_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void posicion_combo_SelectedIndexChanged(object sender, EventArgs e)
         {
             carga_fechas();
         }

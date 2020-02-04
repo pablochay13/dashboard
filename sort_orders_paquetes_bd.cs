@@ -550,7 +550,7 @@ namespace dashboard_medios
             carga_fechas();
         }
 
-        private void comboMeses_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboMeses_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (comboMeses.SelectedIndex == 3 || comboMeses.SelectedIndex == 5 || comboMeses.SelectedIndex == 8 || comboMeses.SelectedIndex == 10 || comboMeses.SelectedIndex == 1 && comboAnio.SelectedIndex == 1)
             {
@@ -560,6 +560,38 @@ namespace dashboard_medios
             {
                 treintauno.Visible = true;
             }
+
+            uno.Checked = false;
+            dos.Checked = false;
+            tres.Checked = false;
+            cuatro.Checked = false;
+            cinco.Checked = false;
+            seis.Checked = false;
+            siete.Checked = false;
+            ocho.Checked = false;
+            nueve.Checked = false;
+            diez.Checked = false;
+            once.Checked = false;
+            doce.Checked = false;
+            trece.Checked = false;
+            catorce.Checked = false;
+            quince.Checked = false;
+            dieciseis.Checked = false;
+            diecisiete.Checked = false;
+            dieciocho.Checked = false;
+            diecinueve.Checked = false;
+            veinte.Checked = false;
+            veitiuno.Checked = false;
+            veintidos.Checked = false;
+            veititres.Checked = false;
+            veiticuatro.Checked = false;
+            veiticinco.Checked = false;
+            veitiseis.Checked = false;
+            veitisiete.Checked = false;
+            veitiocho.Checked = false;
+            veitinueve.Checked = false;
+            treinta.Checked = false;
+            treintauno.Checked = false;
         }
 
         private void calendar_sort_bd_DoubleClick(object sender, EventArgs e)

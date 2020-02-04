@@ -33,5 +33,11 @@ namespace dashboard_medios
             sort_orders_paquetes_bd_full formlario = new sort_orders_paquetes_bd_full();
             formlario.Show();
         }
+
+        private void calendar_Click(object sender, EventArgs e)
+        {
+            calendar_so_paquetes_bd formlario = new calendar_so_paquetes_bd();
+            formlario.Show();
+        }
     }
 }

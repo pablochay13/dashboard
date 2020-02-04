@@ -1,6 +1,6 @@
 ﻿namespace dashboard_medios
 {
-    partial class calendar
+    partial class calendar_so_hoteles
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(calendar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(calendar_so_hoteles));
             this.calendar_full = new CalendarViewer.YearCalendarControl();
             this.destino_combo = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -93,7 +93,7 @@
             this.metroLabel5.Text = "Posición:";
             this.metroLabel5.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // calendar
+            // calendar_so_hoteles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,9 +105,10 @@
             this.Controls.Add(this.calendar_full);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "calendar";
+            this.Name = "calendar_so_hoteles";
             this.Resizable = false;
-            this.Text = "Calendario General de Medios";
+            this.Text = "Calendario Sort Order";
+            this.Load += new System.EventHandler(this.calendar_so_hoteles_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

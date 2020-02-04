@@ -406,7 +406,7 @@
             "Mayo",
             "Junio",
             "Julio",
-            "Agoto",
+            "Agosto",
             "Septiembre",
             "Octubre",
             "Noviembre",

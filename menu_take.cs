@@ -33,5 +33,11 @@ namespace dashboard_medios
             take_over_bd_full formlario = new take_over_bd_full();
             formlario.Show();
         }
+
+        private void calendar_Click(object sender, EventArgs e)
+        {
+            calendar_takeover_bd formlario = new calendar_takeover_bd();
+            formlario.Show();
+        }
     }
 }

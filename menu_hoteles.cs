@@ -33,5 +33,11 @@ namespace dashboard_medios
             sort_orders_hoteles_full formlario = new sort_orders_hoteles_full();
             formlario.Show();
         }
+
+        private void calendar_Click(object sender, EventArgs e)
+        {
+            calendar_so_hoteles formlario = new calendar_so_hoteles();
+            formlario.Show();
+        }
     }
 }

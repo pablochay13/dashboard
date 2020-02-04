@@ -40,6 +40,8 @@
             this.account_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.programing = new MetroFramework.Controls.MetroButton();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.no_select = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.comboAnio = new MetroFramework.Controls.MetroComboBox();
             this.add = new MetroFramework.Controls.MetroButton();
@@ -86,8 +88,6 @@
             this.destino_combo = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.calendar_sort_bd = new Syncfusion.WinForms.Input.SfCalendar();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.no_select = new MetroFramework.Controls.MetroButton();
             this.metroPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.registroFechasMedia)).BeginInit();
             this.metroPanel2.SuspendLayout();
@@ -266,6 +266,26 @@
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
+            // no_select
+            // 
+            this.no_select.Location = new System.Drawing.Point(471, 35);
+            this.no_select.Name = "no_select";
+            this.no_select.Size = new System.Drawing.Size(135, 23);
+            this.no_select.TabIndex = 38;
+            this.no_select.Text = "No seleccionar ninguno";
+            this.no_select.UseSelectable = true;
+            this.no_select.Click += new System.EventHandler(this.no_select_Click);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(362, 35);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(103, 23);
+            this.metroButton1.TabIndex = 37;
+            this.metroButton1.Text = "Seleccionar todo";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
@@ -324,7 +344,7 @@
             "Mayo",
             "Junio",
             "Julio",
-            "Agoto",
+            "Agosto",
             "Septiembre",
             "Octubre",
             "Noviembre",
@@ -900,26 +920,6 @@
             this.calendar_sort_bd.TabIndex = 33;
             this.calendar_sort_bd.Text = "sfCalendar1";
             this.calendar_sort_bd.DoubleClick += new System.EventHandler(this.calendar_sort_bd_DoubleClick);
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(362, 35);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(103, 23);
-            this.metroButton1.TabIndex = 37;
-            this.metroButton1.Text = "Seleccionar todo";
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
-            // no_select
-            // 
-            this.no_select.Location = new System.Drawing.Point(471, 35);
-            this.no_select.Name = "no_select";
-            this.no_select.Size = new System.Drawing.Size(135, 23);
-            this.no_select.TabIndex = 38;
-            this.no_select.Text = "No seleccionar ninguno";
-            this.no_select.UseSelectable = true;
-            this.no_select.Click += new System.EventHandler(this.no_select_Click);
             // 
             // banners_rdb_bd
             // 

@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>12</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -130,11 +130,35 @@
     <Compile Include="banners_rdb_bd_full.Designer.cs">
       <DependentUpon>banners_rdb_bd_full.cs</DependentUpon>
     </Compile>
-    <Compile Include="calendar.cs">
+    <Compile Include="calendar_so_hoteles_bd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="calendar.Designer.cs">
-      <DependentUpon>calendar.cs</DependentUpon>
+    <Compile Include="calendar_so_hoteles_bd.Designer.cs">
+      <DependentUpon>calendar_so_hoteles_bd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="calendar_rdb_bd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="calendar_rdb_bd.Designer.cs">
+      <DependentUpon>calendar_rdb_bd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="calendar_so_paquetes_bd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="calendar_so_paquetes_bd.Designer.cs">
+      <DependentUpon>calendar_so_paquetes_bd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="calendar_takeover_bd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="calendar_takeover_bd.Designer.cs">
+      <DependentUpon>calendar_takeover_bd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="calendar_timer_banner_bd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="calendar_timer_banner_bd.Designer.cs">
+      <DependentUpon>calendar_timer_banner_bd.cs</DependentUpon>
     </Compile>
     <Compile Include="correo.cs" />
     <Compile Include="login.cs">
@@ -236,8 +260,20 @@
     <EmbeddedResource Include="banners_rdb_bd_full.resx">
       <DependentUpon>banners_rdb_bd_full.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="calendar.resx">
-      <DependentUpon>calendar.cs</DependentUpon>
+    <EmbeddedResource Include="calendar_rdb_bd.resx">
+      <DependentUpon>calendar_rdb_bd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="calendar_so_hoteles_bd.resx">
+      <DependentUpon>calendar_so_hoteles_bd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="calendar_so_paquetes_bd.resx">
+      <DependentUpon>calendar_so_paquetes_bd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="calendar_takeover_bd.resx">
+      <DependentUpon>calendar_takeover_bd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="calendar_timer_banner_bd.resx">
+      <DependentUpon>calendar_timer_banner_bd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
@@ -363,11 +399,6 @@
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>

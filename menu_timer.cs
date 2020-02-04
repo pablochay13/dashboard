@@ -33,5 +33,11 @@ namespace dashboard_medios
             timer_banner_bd_full formlario = new timer_banner_bd_full();
             formlario.Show();
         }
+
+        private void calendar_Click(object sender, EventArgs e)
+        {
+            calendar_timer_banner_bd formlario = new calendar_timer_banner_bd();
+            formlario.Show();
+        }
     }
 }

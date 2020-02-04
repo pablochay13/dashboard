@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menu_timer));
             this.list = new MetroFramework.Controls.MetroButton();
             this.program = new MetroFramework.Controls.MetroButton();
+            this.calendar = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // list
@@ -53,11 +54,22 @@
             this.program.UseSelectable = true;
             this.program.Click += new System.EventHandler(this.program_Click);
             // 
+            // calendar
+            // 
+            this.calendar.Location = new System.Drawing.Point(84, 110);
+            this.calendar.Name = "calendar";
+            this.calendar.Size = new System.Drawing.Size(115, 29);
+            this.calendar.TabIndex = 10;
+            this.calendar.Text = "Calendario";
+            this.calendar.UseSelectable = true;
+            this.calendar.Click += new System.EventHandler(this.calendar_Click);
+            // 
             // menu_timer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(283, 127);
+            this.ClientSize = new System.Drawing.Size(283, 163);
+            this.Controls.Add(this.calendar);
             this.Controls.Add(this.list);
             this.Controls.Add(this.program);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -75,5 +87,6 @@
 
         private MetroFramework.Controls.MetroButton list;
         private MetroFramework.Controls.MetroButton program;
+        private MetroFramework.Controls.MetroButton calendar;
     }
 }
