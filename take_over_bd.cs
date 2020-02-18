@@ -21,9 +21,8 @@ namespace dashboard_medios
 
         int year1, month1, day1 = 0;
 
-        string fecha_evento, posicion, hotel, fecha_consulta, posicion_consulta, fecha_tb, hotel_tb = "";
+        string fecha_evento, hotel, fecha_tb, hotel_tb = "";
 
-        string fecha_final, dia_seleccionado, mes_seleccionado, anio_seleccionado = "";
 
         public take_over_bd()
         {
@@ -117,7 +116,7 @@ namespace dashboard_medios
                 }
                 else
                 {
-                    registroFechasMedia.Rows.Add(textFecha.Text, hotel_combo.Text);
+                    registroFechasMedia.Rows.Add(textFecha.Text, hotel_combo.Text, account_text.Text);
                 }
 
                 con.Close();

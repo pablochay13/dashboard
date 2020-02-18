@@ -134,7 +134,9 @@
             this.calendar_sort_bd.Size = new System.Drawing.Size(399, 341);
             this.calendar_sort_bd.TabIndex = 13;
             this.calendar_sort_bd.Text = "sfCalendar1";
+            this.calendar_sort_bd.Click += new System.EventHandler(this.calendar_sort_bd_Click);
             this.calendar_sort_bd.DoubleClick += new System.EventHandler(this.calendar_sort_bd_DoubleClick);
+            this.calendar_sort_bd.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.calendar_sort_bd_MouseDoubleClick);
             // 
             // metroPanel1
             // 
@@ -416,6 +418,7 @@
             this.comboMeses.Size = new System.Drawing.Size(158, 29);
             this.comboMeses.TabIndex = 40;
             this.comboMeses.UseSelectable = true;
+            this.comboMeses.SelectedIndexChanged += new System.EventHandler(this.comboMeses_SelectedIndexChanged_1);
             // 
             // add
             // 

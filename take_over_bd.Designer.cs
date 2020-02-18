@@ -42,8 +42,8 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.hotel_combo = new MetroFramework.Controls.MetroTextBox();
             this.fecha_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.account_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hotel_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.account_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.registroFechasMedia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,8 +83,8 @@
             this.registroFechasMedia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.registroFechasMedia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fecha_so,
-            this.account_so,
-            this.hotel_so});
+            this.hotel_so,
+            this.account_so});
             this.registroFechasMedia.Location = new System.Drawing.Point(28, 301);
             this.registroFechasMedia.Name = "registroFechasMedia";
             this.registroFechasMedia.Size = new System.Drawing.Size(403, 193);
@@ -235,16 +235,16 @@
             this.fecha_so.HeaderText = "Fecha";
             this.fecha_so.Name = "fecha_so";
             // 
-            // account_so
-            // 
-            this.account_so.HeaderText = "Account";
-            this.account_so.Name = "account_so";
-            // 
             // hotel_so
             // 
             this.hotel_so.HeaderText = "Hotel";
             this.hotel_so.Name = "hotel_so";
             this.hotel_so.Width = 400;
+            // 
+            // account_so
+            // 
+            this.account_so.HeaderText = "Account";
+            this.account_so.Name = "account_so";
             // 
             // take_over_bd
             // 
@@ -291,7 +291,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTextBox hotel_combo;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_so;
-        private System.Windows.Forms.DataGridViewTextBoxColumn account_so;
         private System.Windows.Forms.DataGridViewTextBoxColumn hotel_so;
+        private System.Windows.Forms.DataGridViewTextBoxColumn account_so;
     }
 }

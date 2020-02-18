@@ -9,7 +9,6 @@ namespace dashboard_medios
     class variables
     {
         //private static string sentencia = "server=172.20.3.45;port=3306; database=bd-media; Uid=root; pwd=Medi@@dm1n!!;";
-        //private static string sentencia = "server=localhost;port=3306;database=dashboard; Uid=root; pwd=;Allow Zero Datetime=False;Convert Zero Datetime=True";
         private static string sentencia = "server=162.241.60.127;database=ccascaru_dasboard_bd;Uid=ccascaru_root;pwd=Chay1318;";
 
         public static string Sentencia

@@ -34,7 +34,7 @@ namespace dashboard_medios
             destinos_combo();
 
             comboMeses.SelectedIndex = 0;
-            comboAnio.SelectedIndex = 0;
+            comboAnio.SelectedIndex = 1;
             destino_combo.SelectedIndex = 0;
             posicion_combo.SelectedIndex = 0;
 
@@ -2047,38 +2047,36 @@ namespace dashboard_medios
 
         private void calendar_sort_bd_DoubleClick(object sender, EventArgs e)
         {
-            try
-            {
-                con.Close();
+            //try
+            //{
+            //    con.Close();
 
-                con.Open();
+            //    con.Open();
 
-                string sql = "SELECT * FROM sort_orders where fecha_inicio = '" + calendar_sort_bd.SelectedDate.Value.ToString("yyyy-MM-dd") + "'";
+            //    string sql = "SELECT * FROM sort_orders WHERE fecha_inicio='" + calendar_sort_bd.SelectedDate.Value.ToString("yyyy-MM-dd") + "' AND posicion='" + posicion_combo.Text + "' AND destino='" + destino_combo.Text + "' ";
 
-                MySqlCommand cmd = new MySqlCommand(sql, con);
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    fecha_evento = Convert.ToString(reader["fecha_inicio"]);
-                    posicion = Convert.ToString(reader["posicion"]);
-                    hotel = Convert.ToString(reader["hotel"]);
+            //    MessageBox.Show(sql);
 
-                    DateTime date1 = DateTime.Parse(fecha_evento);
+            //    MySqlCommand cmd = new MySqlCommand(sql, con);
+            //    MySqlDataReader reader = cmd.ExecuteReader();
+            //    while (reader.Read())
+            //    {
+            //        fecha_evento = Convert.ToString(reader["fecha_inicio"]);
+            //        posicion = Convert.ToString(reader["posicion"]);
+            //        hotel = Convert.ToString(reader["hotel"]);
 
-                    year1 = date1.Year;
-                    month1 = date1.Month;
-                    day1 = date1.Day;
+            //        string ocupado_sort = Convert.ToString(fecha_evento) + "\n" + Convert.ToString(posicion) + "\n" + Convert.ToString(hotel);
 
-                    string ocupado_sort = Convert.ToString(fecha_evento) + "\n" + Convert.ToString(posicion) + "\n" + Convert.ToString(hotel);
+            //        MessageBox.Show(ocupado_sort, "Fecha ocupada en las siguientes posiciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    MetroFramework.MetroMessageBox.Show(this, ocupado_sort, "Fecha ocupada en las siguientes posiciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                con.Close();
-            }
-            catch (Exception m)
-            {
-                MessageBox.Show(m.Message);
-            }
+            //        MetroFramework.MetroMessageBox.Show(this, ocupado_sort, "Fecha ocupada en las siguientes posiciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    }
+            //    con.Close();
+            //}
+            //catch (Exception m)
+            //{
+            //    MessageBox.Show(m.Message);
+            //}
         }
 
         private void deleteRow_Click(object sender, EventArgs e)
@@ -2238,7 +2236,48 @@ namespace dashboard_medios
             }
         }
 
-        private void comboMeses_SelectedIndexChanged(object sender, EventArgs e)
+        private void calendar_sort_bd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void calendar_sort_bd_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                con.Close();
+
+                con.Open();
+
+                string sql = "SELECT * FROM sort_orders WHERE fecha_inicio='" + calendar_sort_bd.SelectedDate.Value.ToString("yyyy-MM-dd") + "' AND posicion='" + posicion_combo.Text + "' AND destino='" + destino_combo.Text + "' ";
+
+                MessageBox.Show(sql);
+
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    fecha_evento = Convert.ToString(reader["fecha_inicio"]);
+                    posicion = Convert.ToString(reader["posicion"]);
+                    hotel = Convert.ToString(reader["hotel"]);
+
+                    string ocupado_sort = Convert.ToString(fecha_evento) + "\n" + Convert.ToString(posicion) + "\n" + Convert.ToString(hotel);
+
+                    MessageBox.Show(fecha_evento);
+
+                    MessageBox.Show(ocupado_sort, "Fecha ocupada en las siguientes posiciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MetroFramework.MetroMessageBox.Show(this, ocupado_sort, "Fecha ocupada en las siguientes posiciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                con.Close();
+            }
+            catch (Exception m)
+            {
+                MessageBox.Show(m.Message);
+            }
+        }
+
+        private void comboMeses_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if(comboMeses.SelectedIndex == 3 || comboMeses.SelectedIndex == 5 || comboMeses.SelectedIndex == 8 || comboMeses.SelectedIndex == 10 || comboMeses.SelectedIndex == 1 && comboAnio.SelectedIndex == 1)
             {
@@ -2248,6 +2287,38 @@ namespace dashboard_medios
             {
                 treintauno.Visible = true;
             }
+
+            uno.Checked = false;
+            dos.Checked = false;
+            tres.Checked = false;
+            cuatro.Checked = false;
+            cinco.Checked = false;
+            seis.Checked = false;
+            siete.Checked = false;
+            ocho.Checked = false;
+            nueve.Checked = false;
+            diez.Checked = false;
+            once.Checked = false;
+            doce.Checked = false;
+            trece.Checked = false;
+            catorce.Checked = false;
+            quince.Checked = false;
+            dieciseis.Checked = false;
+            diecisiete.Checked = false;
+            dieciocho.Checked = false;
+            diecinueve.Checked = false;
+            veinte.Checked = false;
+            veitiuno.Checked = false;
+            veintidos.Checked = false;
+            veititres.Checked = false;
+            veiticuatro.Checked = false;
+            veiticinco.Checked = false;
+            veitiseis.Checked = false;
+            veitisiete.Checked = false;
+            veitiocho.Checked = false;
+            veitinueve.Checked = false;
+            treinta.Checked = false;
+            treintauno.Checked = false;
         }
 
         private void sort_orders_bd_Load(object sender, EventArgs e)
