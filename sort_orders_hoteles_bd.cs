@@ -21,7 +21,7 @@ namespace dashboard_medios
 
         int year1, month1, day1 = 0;
 
-        string fecha_evento, posicion, hotel, fecha_consulta, posicion_consulta = "";
+        string fecha_evento, fecha_consulta = "";
 
         string fecha_final, dia_seleccionado, mes_seleccionado, anio_seleccionado = "";
 
@@ -2243,38 +2243,39 @@ namespace dashboard_medios
 
         private void calendar_sort_bd_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            try
-            {
-                con.Close();
+            verificar_dispo();
+            //try
+            //{
+            //    con.Close();
 
-                con.Open();
+            //    con.Open();
 
-                string sql = "SELECT * FROM sort_orders WHERE fecha_inicio='" + calendar_sort_bd.SelectedDate.Value.ToString("yyyy-MM-dd") + "' AND posicion='" + posicion_combo.Text + "' AND destino='" + destino_combo.Text + "' ";
+            //    string sql = "SELECT * FROM sort_orders WHERE fecha_inicio='" + calendar_sort_bd.SelectedDate.Value.ToString("yyyy-MM-dd") + "' AND posicion='" + posicion_combo.Text + "' AND destino='" + destino_combo.Text + "' ";
 
-                MessageBox.Show(sql);
+            //    MessageBox.Show(sql);
 
-                MySqlCommand cmd = new MySqlCommand(sql, con);
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    fecha_evento = Convert.ToString(reader["fecha_inicio"]);
-                    posicion = Convert.ToString(reader["posicion"]);
-                    hotel = Convert.ToString(reader["hotel"]);
+            //    MySqlCommand cmd = new MySqlCommand(sql, con);
+            //    MySqlDataReader reader = cmd.ExecuteReader();
+            //    while (reader.Read())
+            //    {
+            //        fecha_evento = Convert.ToString(reader["fecha_inicio"]);
+            //        posicion = Convert.ToString(reader["posicion"]);
+            //        hotel = Convert.ToString(reader["hotel"]);
 
-                    string ocupado_sort = Convert.ToString(fecha_evento) + "\n" + Convert.ToString(posicion) + "\n" + Convert.ToString(hotel);
+            //        string ocupado_sort = Convert.ToString(fecha_evento) + "\n" + Convert.ToString(posicion) + "\n" + Convert.ToString(hotel);
 
-                    MessageBox.Show(fecha_evento);
+            //        MessageBox.Show(fecha_evento);
 
-                    MessageBox.Show(ocupado_sort, "Fecha ocupada en las siguientes posiciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        MessageBox.Show(ocupado_sort, "Fecha ocupada en las siguientes posiciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    MetroFramework.MetroMessageBox.Show(this, ocupado_sort, "Fecha ocupada en las siguientes posiciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                con.Close();
-            }
-            catch (Exception m)
-            {
-                MessageBox.Show(m.Message);
-            }
+            //        MetroFramework.MetroMessageBox.Show(this, ocupado_sort, "Fecha ocupada en las siguientes posiciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    }
+            //    con.Close();
+            //}
+            //catch (Exception m)
+            //{
+            //    MessageBox.Show(m.Message);
+            //}
         }
 
         private void comboMeses_SelectedIndexChanged_1(object sender, EventArgs e)

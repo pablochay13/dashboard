@@ -33,6 +33,11 @@ namespace dashboard_medios
             account_text.Text = variables.nombre;
         }
 
+        private void timer_banner_bdm_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void take_over_bd_Load(object sender, EventArgs e)
         {
             try
@@ -72,8 +77,7 @@ namespace dashboard_medios
                 MessageBox.Show(m.Message);
             }
         }
-
-
+        
         private void timer_banner_bdm_DoubleClick(object sender, EventArgs e)
         {
             try

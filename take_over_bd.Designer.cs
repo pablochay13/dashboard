@@ -33,6 +33,9 @@
             this.add = new MetroFramework.Controls.MetroButton();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.registroFechasMedia = new System.Windows.Forms.DataGridView();
+            this.fecha_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotel_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.account_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.textFecha = new MetroFramework.Controls.MetroTextBox();
@@ -41,9 +44,6 @@
             this.account_text = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.hotel_combo = new MetroFramework.Controls.MetroTextBox();
-            this.fecha_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hotel_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.account_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.registroFechasMedia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,6 +89,22 @@
             this.registroFechasMedia.Name = "registroFechasMedia";
             this.registroFechasMedia.Size = new System.Drawing.Size(403, 193);
             this.registroFechasMedia.TabIndex = 49;
+            // 
+            // fecha_so
+            // 
+            this.fecha_so.HeaderText = "Fecha";
+            this.fecha_so.Name = "fecha_so";
+            // 
+            // hotel_so
+            // 
+            this.hotel_so.HeaderText = "Hotel";
+            this.hotel_so.Name = "hotel_so";
+            this.hotel_so.Width = 400;
+            // 
+            // account_so
+            // 
+            this.account_so.HeaderText = "Account";
+            this.account_so.Name = "account_so";
             // 
             // metroLabel1
             // 
@@ -158,6 +174,7 @@
             this.timer_banner_bdm.Size = new System.Drawing.Size(532, 447);
             this.timer_banner_bdm.TabIndex = 43;
             this.timer_banner_bdm.Text = "sfCalendar1";
+            this.timer_banner_bdm.Click += new System.EventHandler(this.timer_banner_bdm_Click);
             this.timer_banner_bdm.DoubleClick += new System.EventHandler(this.timer_banner_bdm_DoubleClick);
             // 
             // account_text
@@ -229,22 +246,6 @@
             this.hotel_combo.UseSelectable = true;
             this.hotel_combo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.hotel_combo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // fecha_so
-            // 
-            this.fecha_so.HeaderText = "Fecha";
-            this.fecha_so.Name = "fecha_so";
-            // 
-            // hotel_so
-            // 
-            this.hotel_so.HeaderText = "Hotel";
-            this.hotel_so.Name = "hotel_so";
-            this.hotel_so.Width = 400;
-            // 
-            // account_so
-            // 
-            this.account_so.HeaderText = "Account";
-            this.account_so.Name = "account_so";
             // 
             // take_over_bd
             // 
