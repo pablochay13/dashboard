@@ -29,13 +29,9 @@ namespace dashboard_medios
             InitializeComponent();
 
             this.timer_banner_bdm.Culture = new CultureInfo("es-MX");
+            this.timer_banner_bdm.ShowNavigationButton = false;
 
             account_text.Text = variables.nombre;
-        }
-
-        private void timer_banner_bdm_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void take_over_bd_Load(object sender, EventArgs e)
@@ -158,53 +154,53 @@ namespace dashboard_medios
 
                 MetroFramework.MetroMessageBox.Show(this, "Datos registrados correctamente", "Best Travel Media", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                //Table start.
-                string html = "<h2>Solicitud de fechas:</h2>";
+                ////Table start.
+                //string html = "<h2>Solicitud de fechas:</h2>";
 
-                html = "<table cellpadding='5' cellspacing='0' style='border: 1px solid #ccc;font-size: 9pt'>";
+                //html = "<table cellpadding='5' cellspacing='0' style='border: 1px solid #ccc;font-size: 9pt'>";
 
-                //Adding HeaderRow.
-                html += "<tr>";
-                foreach (DataGridViewColumn column in registroFechasMedia.Columns)
-                {
-                    html += "<th style='background-color: #B8DBFD;border: 1px solid #ccc'>" + column.HeaderText + "</th>";
-                }
-                html += "</tr>";
+                ////Adding HeaderRow.
+                //html += "<tr>";
+                //foreach (DataGridViewColumn column in registroFechasMedia.Columns)
+                //{
+                //    html += "<th style='background-color: #B8DBFD;border: 1px solid #ccc'>" + column.HeaderText + "</th>";
+                //}
+                //html += "</tr>";
 
-                //Adding DataRow.
-                foreach (DataGridViewRow row in registroFechasMedia.Rows)
-                {
-                    html += "<tr>";
-                    foreach (DataGridViewCell cell in row.Cells)
-                    {
-                        html += "<td style='width:200px;border: 1px solid #ccc'>" + cell.Value.ToString() + "</td>";
-                    }
-                    html += "</tr>";
-                }
+                ////Adding DataRow.
+                //foreach (DataGridViewRow row in registroFechasMedia.Rows)
+                //{
+                //    html += "<tr>";
+                //    foreach (DataGridViewCell cell in row.Cells)
+                //    {
+                //        html += "<td style='width:200px;border: 1px solid #ccc'>" + cell.Value.ToString() + "</td>";
+                //    }
+                //    html += "</tr>";
+                //}
 
-                //Table end.
-                html += "</table>";
+                ////Table end.
+                //html += "</table>";
 
 
-                //Sending the DataGridView's HTML in Email.
-                using (MailMessage mm = new MailMessage("pablochay.bd@gmail.com", "lizeth.chi@bestday.com"))
-                {
-                    MailAddress copy = new MailAddress("pamador@bestday.com");
-                    mm.CC.Add(copy);
-                    mm.Subject = "Solicitud alta Sort Order" + " " + "-" + " " + variables.nombre;
-                    mm.Body = html;
-                    mm.IsBodyHtml = true;
-                    SmtpClient smtp = new SmtpClient();
-                    smtp.Host = "smtp.gmail.com";
-                    smtp.EnableSsl = true;
-                    NetworkCredential NetworkCred = new NetworkCredential(mm.From.Address, "Chay1318");
-                    smtp.UseDefaultCredentials = true;
-                    smtp.Credentials = NetworkCred;
-                    smtp.Port = 587;
-                    smtp.Send(mm);
+                ////Sending the DataGridView's HTML in Email.
+                //using (MailMessage mm = new MailMessage("pablochay.bd@gmail.com", "lizeth.chi@bestday.com"))
+                //{
+                //    MailAddress copy = new MailAddress("pamador@bestday.com");
+                //    mm.CC.Add(copy);
+                //    mm.Subject = "Solicitud alta Sort Order" + " " + "-" + " " + variables.nombre;
+                //    mm.Body = html;
+                //    mm.IsBodyHtml = true;
+                //    SmtpClient smtp = new SmtpClient();
+                //    smtp.Host = "smtp.gmail.com";
+                //    smtp.EnableSsl = true;
+                //    NetworkCredential NetworkCred = new NetworkCredential(mm.From.Address, "Chay1318");
+                //    smtp.UseDefaultCredentials = true;
+                //    smtp.Credentials = NetworkCred;
+                //    smtp.Port = 587;
+                //    smtp.Send(mm);
 
-                    MetroFramework.MetroMessageBox.Show(this, "Correo Enviado Correctamente", "Best Travel Media", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                }
+                //    MetroFramework.MetroMessageBox.Show(this, "Correo Enviado Correctamente", "Best Travel Media", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                //}
 
                 registroFechasMedia.Rows.Clear();
             }

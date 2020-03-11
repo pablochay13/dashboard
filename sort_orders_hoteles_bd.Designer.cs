@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sort_orders_hoteles_bd));
-            this.calendar_sort_bd = new Syncfusion.WinForms.Input.SfCalendar();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.hotel_combo = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
@@ -88,6 +87,7 @@
             this.account_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.programing = new MetroFramework.Controls.MetroButton();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.calendar_sort_bd = new Syncfusion.WinForms.Input.SfCalendar();
             this.metroPanel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treintauno)).BeginInit();
@@ -124,19 +124,6 @@
             this.metroPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.registroFechasMedia)).BeginInit();
             this.SuspendLayout();
-            // 
-            // calendar_sort_bd
-            // 
-            this.calendar_sort_bd.AllowDrop = true;
-            this.calendar_sort_bd.Culture = new System.Globalization.CultureInfo("en-US");
-            this.calendar_sort_bd.Location = new System.Drawing.Point(23, 346);
-            this.calendar_sort_bd.Name = "calendar_sort_bd";
-            this.calendar_sort_bd.Size = new System.Drawing.Size(399, 341);
-            this.calendar_sort_bd.TabIndex = 13;
-            this.calendar_sort_bd.Text = "sfCalendar1";
-            this.calendar_sort_bd.Click += new System.EventHandler(this.calendar_sort_bd_Click);
-            this.calendar_sort_bd.DoubleClick += new System.EventHandler(this.calendar_sort_bd_DoubleClick);
-            this.calendar_sort_bd.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.calendar_sort_bd_MouseDoubleClick);
             // 
             // metroPanel1
             // 
@@ -922,16 +909,25 @@
             this.metroLabel4.Text = "Calendario general:";
             this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
+            // calendar_sort_bd
+            // 
+            this.calendar_sort_bd.Location = new System.Drawing.Point(23, 346);
+            this.calendar_sort_bd.Name = "calendar_sort_bd";
+            this.calendar_sort_bd.Size = new System.Drawing.Size(399, 337);
+            this.calendar_sort_bd.TabIndex = 33;
+            this.calendar_sort_bd.Text = "sfCalendar1";
+            this.calendar_sort_bd.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.calendar_sort_bd_MouseDoubleClick_1);
+            // 
             // sort_orders_hoteles_bd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 706);
+            this.Controls.Add(this.calendar_sort_bd);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
-            this.Controls.Add(this.calendar_sort_bd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "sort_orders_hoteles_bd";
@@ -981,8 +977,6 @@
         }
 
         #endregion
-
-        private Syncfusion.WinForms.Input.SfCalendar calendar_sort_bd;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroComboBox posicion_combo;
@@ -1041,5 +1035,6 @@
         private MetroFramework.Controls.MetroComboBox comboAnio;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroComboBox comboMeses;
+        private Syncfusion.WinForms.Input.SfCalendar calendar_sort_bd;
     }
 }

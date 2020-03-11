@@ -2045,40 +2045,6 @@ namespace dashboard_medios
             carga_fechas();
         }
 
-        private void calendar_sort_bd_DoubleClick(object sender, EventArgs e)
-        {
-            //try
-            //{
-            //    con.Close();
-
-            //    con.Open();
-
-            //    string sql = "SELECT * FROM sort_orders WHERE fecha_inicio='" + calendar_sort_bd.SelectedDate.Value.ToString("yyyy-MM-dd") + "' AND posicion='" + posicion_combo.Text + "' AND destino='" + destino_combo.Text + "' ";
-
-            //    MessageBox.Show(sql);
-
-            //    MySqlCommand cmd = new MySqlCommand(sql, con);
-            //    MySqlDataReader reader = cmd.ExecuteReader();
-            //    while (reader.Read())
-            //    {
-            //        fecha_evento = Convert.ToString(reader["fecha_inicio"]);
-            //        posicion = Convert.ToString(reader["posicion"]);
-            //        hotel = Convert.ToString(reader["hotel"]);
-
-            //        string ocupado_sort = Convert.ToString(fecha_evento) + "\n" + Convert.ToString(posicion) + "\n" + Convert.ToString(hotel);
-
-            //        MessageBox.Show(ocupado_sort, "Fecha ocupada en las siguientes posiciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            //        MetroFramework.MetroMessageBox.Show(this, ocupado_sort, "Fecha ocupada en las siguientes posiciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    }
-            //    con.Close();
-            //}
-            //catch (Exception m)
-            //{
-            //    MessageBox.Show(m.Message);
-            //}
-        }
-
         private void deleteRow_Click(object sender, EventArgs e)
         {
             registroFechasMedia.Rows.RemoveAt(registroFechasMedia.CurrentRow.Index);
@@ -2325,6 +2291,8 @@ namespace dashboard_medios
         private void sort_orders_bd_Load(object sender, EventArgs e)
         {
             carga_fechas();
+
+            this.calendar_sort_bd.ShowNavigationButton = false;
         }
 
         //public void comboClientes()
@@ -2380,6 +2348,36 @@ namespace dashboard_medios
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void calendar_sort_bd_MouseDoubleClick_1(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                con.Close();
+
+                con.Open();
+
+                string sql = "SELECT * FROM sort_orders WHERE fecha_inicio='" + calendar_sort_bd.SelectedDate.Value.ToString("yyyy-MM-dd") + "' AND posicion='" + posicion_combo.Text + "' AND destino='" + destino_combo.Text + "' ";
+
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    fecha_evento = Convert.ToString(reader["fecha_inicio"]);
+                    string posicion = Convert.ToString(reader["posicion"]);
+                    string hotel = Convert.ToString(reader["hotel"]);
+
+                    string ocupado_sort = Convert.ToString(fecha_evento) + "\n" + Convert.ToString(posicion) + "\n" + Convert.ToString(hotel);
+
+                    MetroFramework.MetroMessageBox.Show(this, ocupado_sort, "Fecha ocupada en las siguientes posiciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                con.Close();
+            }
+            catch (Exception m)
+            {
+                MessageBox.Show(m.Message);
             }
         }
 

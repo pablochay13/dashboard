@@ -37,6 +37,8 @@ namespace dashboard_medios
         private void timer_banner_bd_Load(object sender, EventArgs e)
         {
             carga_fechas();
+
+            this.timer_banner_bdm.ShowNavigationButton = false;
         }
 
         private void timer_banner_bdm_DoubleClick(object sender, EventArgs e)

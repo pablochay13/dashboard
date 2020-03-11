@@ -173,8 +173,8 @@
             this.timer_banner_bdm.Name = "timer_banner_bdm";
             this.timer_banner_bdm.Size = new System.Drawing.Size(532, 447);
             this.timer_banner_bdm.TabIndex = 43;
+            this.timer_banner_bdm.TabStop = false;
             this.timer_banner_bdm.Text = "sfCalendar1";
-            this.timer_banner_bdm.Click += new System.EventHandler(this.timer_banner_bdm_Click);
             this.timer_banner_bdm.DoubleClick += new System.EventHandler(this.timer_banner_bdm_DoubleClick);
             // 
             // account_text

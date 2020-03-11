@@ -540,6 +540,8 @@ namespace dashboard_medios
         private void banners_rdb_bd_Load(object sender, EventArgs e)
         {
             carga_fechas();
+
+            this.calendar_sort_bd.ShowNavigationButton = false;
         }
 
         private void comboMeses_SelectedIndexChanged(object sender, EventArgs e)

@@ -45,6 +45,8 @@ namespace dashboard_medios
         private void sort_orders_paquetes_bd_Load(object sender, EventArgs e)
         {
             carga_fechas();
+
+            this.calendar_sort_bd.ShowNavigationButton = false;
         }
 
         private void add_Click(object sender, EventArgs e)

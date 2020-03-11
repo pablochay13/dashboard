@@ -17,35 +17,35 @@ namespace dashboard_medios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new sort_orders_hoteles_bd());
+            //Application.Run(new main());
 
-            //try
-            //{
-            //    MySqlConnection con = new MySqlConnection(variables.Sentencia);
-            //    con.Close();
-            //    con.Open();
-            //    string sql = "SELECT usuario, privilegios FROM usuarios WHERE privilegios = 'admin' ";
-            //    MySqlCommand cmd = new MySqlCommand(sql, con);
-            //    MySqlDataReader reader = cmd.ExecuteReader();
-            //    if (reader.Read())
-            //    {
-            //        variables.Tipousuario = Convert.ToString(reader["usuario"]);
-            //        variables.Privilegios = Convert.ToString(reader["privilegios"]);
-            //        variables.Privilegios = Convert.ToString(reader["privilegios"]);
-            //        if (variables.Privilegios == "admin")
-            //        {
-            //            Application.Run(new login());
-            //        }
-            //    }
-            //    else if (variables.Privilegios != "admin" || variables.Privilegios != "user")
-            //    {
-            //        Application.Restart();
-            //    }
-            //}
-            //catch (Exception m)
-            //{
-            //    MessageBox.Show(m.Message);
-            //}
+            try
+            {
+                MySqlConnection con = new MySqlConnection(variables.Sentencia);
+                con.Close();
+                con.Open();
+                string sql = "SELECT usuario, privilegios FROM usuarios WHERE privilegios = 'admin' ";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    variables.Tipousuario = Convert.ToString(reader["usuario"]);
+                    variables.Privilegios = Convert.ToString(reader["privilegios"]);
+                    variables.Privilegios = Convert.ToString(reader["privilegios"]);
+                    if (variables.Privilegios == "admin")
+                    {
+                        Application.Run(new login());
+                    }
+                }
+                else if (variables.Privilegios != "admin" || variables.Privilegios != "user")
+                {
+                    Application.Restart();
+                }
+            }
+            catch (Exception m)
+            {
+                MessageBox.Show(m.Message);
+            }
         }
     }
 }
