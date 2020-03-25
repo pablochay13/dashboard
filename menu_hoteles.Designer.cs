@@ -32,11 +32,20 @@
             this.list = new MetroFramework.Controls.MetroButton();
             this.program = new MetroFramework.Controls.MetroButton();
             this.calendar = new MetroFramework.Controls.MetroButton();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroButton4 = new MetroFramework.Controls.MetroButton();
+            this.metroButton5 = new MetroFramework.Controls.MetroButton();
+            this.metroButton6 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // list
             // 
-            this.list.Location = new System.Drawing.Point(145, 75);
+            this.list.Location = new System.Drawing.Point(144, 93);
             this.list.Name = "list";
             this.list.Size = new System.Drawing.Size(115, 29);
             this.list.TabIndex = 3;
@@ -46,7 +55,7 @@
             // 
             // program
             // 
-            this.program.Location = new System.Drawing.Point(24, 75);
+            this.program.Location = new System.Drawing.Point(23, 93);
             this.program.Name = "program";
             this.program.Size = new System.Drawing.Size(115, 29);
             this.program.TabIndex = 2;
@@ -56,7 +65,7 @@
             // 
             // calendar
             // 
-            this.calendar.Location = new System.Drawing.Point(84, 110);
+            this.calendar.Location = new System.Drawing.Point(265, 93);
             this.calendar.Name = "calendar";
             this.calendar.Size = new System.Drawing.Size(115, 29);
             this.calendar.TabIndex = 11;
@@ -64,11 +73,103 @@
             this.calendar.UseSelectable = true;
             this.calendar.Click += new System.EventHandler(this.calendar_Click);
             // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(23, 71);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(59, 19);
+            this.metroLabel1.TabIndex = 12;
+            this.metroLabel1.Text = "Best Day";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(23, 152);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel2.TabIndex = 16;
+            this.metroLabel2.Text = "Liverpool";
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(265, 174);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(115, 29);
+            this.metroButton1.TabIndex = 15;
+            this.metroButton1.Text = "Calendario";
+            this.metroButton1.UseSelectable = true;
+            // 
+            // metroButton2
+            // 
+            this.metroButton2.Location = new System.Drawing.Point(144, 174);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(115, 29);
+            this.metroButton2.TabIndex = 14;
+            this.metroButton2.Text = "Listar";
+            this.metroButton2.UseSelectable = true;
+            // 
+            // metroButton3
+            // 
+            this.metroButton3.Location = new System.Drawing.Point(23, 174);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(115, 29);
+            this.metroButton3.TabIndex = 13;
+            this.metroButton3.Text = "Programar";
+            this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(23, 234);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(60, 19);
+            this.metroLabel3.TabIndex = 20;
+            this.metroLabel3.Text = "HotelDO";
+            // 
+            // metroButton4
+            // 
+            this.metroButton4.Location = new System.Drawing.Point(265, 256);
+            this.metroButton4.Name = "metroButton4";
+            this.metroButton4.Size = new System.Drawing.Size(115, 29);
+            this.metroButton4.TabIndex = 19;
+            this.metroButton4.Text = "Calendario";
+            this.metroButton4.UseSelectable = true;
+            // 
+            // metroButton5
+            // 
+            this.metroButton5.Location = new System.Drawing.Point(144, 256);
+            this.metroButton5.Name = "metroButton5";
+            this.metroButton5.Size = new System.Drawing.Size(115, 29);
+            this.metroButton5.TabIndex = 18;
+            this.metroButton5.Text = "Listar";
+            this.metroButton5.UseSelectable = true;
+            // 
+            // metroButton6
+            // 
+            this.metroButton6.Location = new System.Drawing.Point(23, 256);
+            this.metroButton6.Name = "metroButton6";
+            this.metroButton6.Size = new System.Drawing.Size(115, 29);
+            this.metroButton6.TabIndex = 17;
+            this.metroButton6.Text = "Programar";
+            this.metroButton6.UseSelectable = true;
+            this.metroButton6.Click += new System.EventHandler(this.metroButton6_Click);
+            // 
             // menu_hoteles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(283, 163);
+            this.ClientSize = new System.Drawing.Size(405, 311);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.metroButton4);
+            this.Controls.Add(this.metroButton5);
+            this.Controls.Add(this.metroButton6);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.metroButton2);
+            this.Controls.Add(this.metroButton3);
+            this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.calendar);
             this.Controls.Add(this.list);
             this.Controls.Add(this.program);
@@ -79,6 +180,7 @@
             this.Text = "Selecciona";
             this.Load += new System.EventHandler(this.menu_hoteles_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -87,5 +189,14 @@
         private MetroFramework.Controls.MetroButton list;
         private MetroFramework.Controls.MetroButton program;
         private MetroFramework.Controls.MetroButton calendar;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroButton metroButton3;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroButton metroButton4;
+        private MetroFramework.Controls.MetroButton metroButton5;
+        private MetroFramework.Controls.MetroButton metroButton6;
     }
 }

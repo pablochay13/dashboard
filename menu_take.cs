@@ -39,5 +39,11 @@ namespace dashboard_medios
             calendar_takeover_bd formlario = new calendar_takeover_bd();
             formlario.Show();
         }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            take_over_hdo formlario = new take_over_hdo();
+            formlario.Show();
+        }
     }
 }

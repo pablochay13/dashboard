@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
+            this.info_notes = new System.Windows.Forms.PictureBox();
             this.so_paquetes = new MetroFramework.Controls.MetroTile();
             this.settings = new MetroFramework.Controls.MetroTile();
             this.Users = new MetroFramework.Controls.MetroTile();
@@ -37,12 +38,25 @@
             this.banner_rdb = new MetroFramework.Controls.MetroTile();
             this.timer_baner = new MetroFramework.Controls.MetroTile();
             this.sort_order = new MetroFramework.Controls.MetroTile();
+            ((System.ComponentModel.ISupportInitialize)(this.info_notes)).BeginInit();
             this.SuspendLayout();
+            // 
+            // info_notes
+            // 
+            this.info_notes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.info_notes.Image = global::dashboard_medios.Properties.Resources.notepad;
+            this.info_notes.Location = new System.Drawing.Point(569, 24);
+            this.info_notes.Name = "info_notes";
+            this.info_notes.Size = new System.Drawing.Size(36, 36);
+            this.info_notes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.info_notes.TabIndex = 9;
+            this.info_notes.TabStop = false;
+            this.info_notes.Click += new System.EventHandler(this.info_notes_Click);
             // 
             // so_paquetes
             // 
             this.so_paquetes.ActiveControl = null;
-            this.so_paquetes.Location = new System.Drawing.Point(169, 63);
+            this.so_paquetes.Location = new System.Drawing.Point(173, 81);
             this.so_paquetes.Name = "so_paquetes";
             this.so_paquetes.Size = new System.Drawing.Size(140, 140);
             this.so_paquetes.Style = MetroFramework.MetroColorStyle.Lime;
@@ -58,7 +72,7 @@
             // settings
             // 
             this.settings.ActiveControl = null;
-            this.settings.Location = new System.Drawing.Point(461, 209);
+            this.settings.Location = new System.Drawing.Point(465, 227);
             this.settings.Name = "settings";
             this.settings.Size = new System.Drawing.Size(140, 140);
             this.settings.Style = MetroFramework.MetroColorStyle.Teal;
@@ -73,7 +87,7 @@
             // Users
             // 
             this.Users.ActiveControl = null;
-            this.Users.Location = new System.Drawing.Point(315, 209);
+            this.Users.Location = new System.Drawing.Point(319, 227);
             this.Users.Name = "Users";
             this.Users.Size = new System.Drawing.Size(140, 140);
             this.Users.Style = MetroFramework.MetroColorStyle.Brown;
@@ -88,7 +102,7 @@
             // inventorty
             // 
             this.inventorty.ActiveControl = null;
-            this.inventorty.Location = new System.Drawing.Point(169, 209);
+            this.inventorty.Location = new System.Drawing.Point(173, 227);
             this.inventorty.Name = "inventorty";
             this.inventorty.Size = new System.Drawing.Size(140, 140);
             this.inventorty.Style = MetroFramework.MetroColorStyle.Orange;
@@ -103,7 +117,7 @@
             // take_over
             // 
             this.take_over.ActiveControl = null;
-            this.take_over.Location = new System.Drawing.Point(23, 209);
+            this.take_over.Location = new System.Drawing.Point(27, 227);
             this.take_over.Name = "take_over";
             this.take_over.Size = new System.Drawing.Size(140, 140);
             this.take_over.Style = MetroFramework.MetroColorStyle.Pink;
@@ -119,7 +133,7 @@
             // banner_rdb
             // 
             this.banner_rdb.ActiveControl = null;
-            this.banner_rdb.Location = new System.Drawing.Point(461, 63);
+            this.banner_rdb.Location = new System.Drawing.Point(465, 81);
             this.banner_rdb.Name = "banner_rdb";
             this.banner_rdb.Size = new System.Drawing.Size(140, 140);
             this.banner_rdb.Style = MetroFramework.MetroColorStyle.Magenta;
@@ -135,7 +149,7 @@
             // timer_baner
             // 
             this.timer_baner.ActiveControl = null;
-            this.timer_baner.Location = new System.Drawing.Point(315, 63);
+            this.timer_baner.Location = new System.Drawing.Point(319, 81);
             this.timer_baner.Name = "timer_baner";
             this.timer_baner.Size = new System.Drawing.Size(140, 140);
             this.timer_baner.Style = MetroFramework.MetroColorStyle.Red;
@@ -151,7 +165,7 @@
             // sort_order
             // 
             this.sort_order.ActiveControl = null;
-            this.sort_order.Location = new System.Drawing.Point(23, 63);
+            this.sort_order.Location = new System.Drawing.Point(27, 81);
             this.sort_order.Name = "sort_order";
             this.sort_order.Size = new System.Drawing.Size(140, 140);
             this.sort_order.TabIndex = 0;
@@ -167,7 +181,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 380);
+            this.ClientSize = new System.Drawing.Size(633, 413);
+            this.Controls.Add(this.info_notes);
             this.Controls.Add(this.so_paquetes);
             this.Controls.Add(this.settings);
             this.Controls.Add(this.Users);
@@ -182,6 +197,7 @@
             this.Resizable = false;
             this.Text = "Control de Medios Best Travel Media";
             this.Load += new System.EventHandler(this.main_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.info_notes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -196,5 +212,6 @@
         private MetroFramework.Controls.MetroTile inventorty;
         private MetroFramework.Controls.MetroTile take_over;
         private MetroFramework.Controls.MetroTile so_paquetes;
+        private System.Windows.Forms.PictureBox info_notes;
     }
 }

@@ -12,37 +12,17 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace dashboard_medios
 {
-    public partial class banners_rdb_bd : MetroFramework.Forms.MetroForm
+    public partial class sort_orders_hoteles_liverp : MetroFramework.Forms.MetroForm
     {
         MySqlConnection con = new MySqlConnection(variables.Sentencia);
 
-        AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-
         int year1, month1, day1 = 0;
 
-        string fecha_evento, posicion, hotel, fecha_consulta, posicion_consulta = "";
+        string fecha_evento, fecha_consulta = "";
 
         string fecha_final, dia_seleccionado, mes_seleccionado, anio_seleccionado = "";
-
-        public banners_rdb_bd()
-        {
-            InitializeComponent();
-
-            this.calendar_sort_bd.Culture = new CultureInfo("es-MX");
-
-            //comboClientes();
-            destinos_combo();
-
-            comboMeses.SelectedIndex = 0;
-            comboAnio.SelectedIndex = 0;
-            destino_combo.SelectedIndex = 0;
-            posicion_combo.SelectedIndex = 0;
-
-            account_text.Text = variables.Nombre;
-        }
 
         private void add_Click(object sender, EventArgs e)
         {
@@ -421,11 +401,11 @@ namespace dashboard_medios
             }
         }
 
-        private void programing_Click_1(object sender, EventArgs e)
+        private void programing_Click(object sender, EventArgs e)
         {
             try
             {
-                MySqlCommand agregar = new MySqlCommand("INSERT INTO banners_rdb_bd (`fecha_inicio` , `posicion` , `destino` , `hotel` , `account`) VALUES (?fecha_inicio , ?posicion , ?destino , ?hotel , ?account)", con);
+                MySqlCommand agregar = new MySqlCommand("INSERT INTO sort_orders_liverp (`fecha_inicio` , `posicion` , `destino` , `hotel` , `account`) VALUES (?fecha_inicio , ?posicion , ?destino , ?hotel, ?account)", con);
 
                 con.Close();
                 con.Open();
@@ -537,96 +517,9 @@ namespace dashboard_medios
             }
         }
 
-        private void banners_rdb_bd_Load(object sender, EventArgs e)
-        {
-            carga_fechas();
-
-            this.calendar_sort_bd.ShowNavigationButton = false;
-        }
-
-        private void comboMeses_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboMeses.SelectedIndex == 3 || comboMeses.SelectedIndex == 5 || comboMeses.SelectedIndex == 8 || comboMeses.SelectedIndex == 10 || comboMeses.SelectedIndex == 1 && comboAnio.SelectedIndex == 1)
-            {
-                treintauno.Visible = false;
-            }
-            else
-            {
-                treintauno.Visible = true;
-            }
-
-            uno.Checked = false;
-            dos.Checked = false;
-            tres.Checked = false;
-            cuatro.Checked = false;
-            cinco.Checked = false;
-            seis.Checked = false;
-            siete.Checked = false;
-            ocho.Checked = false;
-            nueve.Checked = false;
-            diez.Checked = false;
-            once.Checked = false;
-            doce.Checked = false;
-            trece.Checked = false;
-            catorce.Checked = false;
-            quince.Checked = false;
-            dieciseis.Checked = false;
-            diecisiete.Checked = false;
-            dieciocho.Checked = false;
-            diecinueve.Checked = false;
-            veinte.Checked = false;
-            veitiuno.Checked = false;
-            veintidos.Checked = false;
-            veititres.Checked = false;
-            veiticuatro.Checked = false;
-            veiticinco.Checked = false;
-            veitiseis.Checked = false;
-            veitisiete.Checked = false;
-            veitiocho.Checked = false;
-            veitinueve.Checked = false;
-            treinta.Checked = false;
-            treintauno.Checked = false;
-        }
-
         private void posicion_combo_SelectedIndexChanged(object sender, EventArgs e)
         {
             carga_fechas();
-        }
-
-        private void calendar_sort_bd_DoubleClick(object sender, EventArgs e)
-        {
-            try
-            {
-                con.Close();
-
-                con.Open();
-
-                string sql = "SELECT * FROM banners_rdb_bd where fecha_inicio = '" + calendar_sort_bd.SelectedDate.Value.ToString("yyyy-MM-dd") + "'";
-
-                MySqlCommand cmd = new MySqlCommand(sql, con);
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    fecha_evento = Convert.ToString(reader["fecha_inicio"]);
-                    posicion = Convert.ToString(reader["posicion"]);
-                    hotel = Convert.ToString(reader["hotel"]);
-
-                    DateTime date1 = DateTime.Parse(fecha_evento);
-
-                    year1 = date1.Year;
-                    month1 = date1.Month;
-                    day1 = date1.Day;
-
-                    string ocupado_sort = Convert.ToString(fecha_evento) + "\n" + Convert.ToString(posicion) + "\n" + Convert.ToString(hotel);
-
-                    MetroFramework.MetroMessageBox.Show(this, ocupado_sort, "Fecha ocupada en las siguientes posiciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                con.Close();
-            }
-            catch (Exception m)
-            {
-                MessageBox.Show(m.Message);
-            }
         }
 
         private void uno_CheckStateChanged(object sender, EventArgs e)
@@ -643,7 +536,7 @@ namespace dashboard_medios
                 con.Close();
                 con.Open();
 
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                 MySqlDataReader leer = cmd.ExecuteReader();
 
                 if (leer.Read())
@@ -661,7 +554,7 @@ namespace dashboard_medios
                     {
                         MessageBox.Show("Fecha y posición ocupada en el destino seleccionado!", "Sistema BestDay Media", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                        uno.Checked = false; 
+                        uno.Checked = false;
                     }
                 }
 
@@ -683,7 +576,7 @@ namespace dashboard_medios
                 con.Close();
                 con.Open();
 
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                 MySqlDataReader leer = cmd.ExecuteReader();
 
                 if (leer.Read())
@@ -725,7 +618,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -772,7 +665,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -786,7 +679,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -821,7 +714,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -835,7 +728,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -870,7 +763,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -884,7 +777,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -919,7 +812,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -933,7 +826,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -968,7 +861,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -982,7 +875,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1017,7 +910,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1031,7 +924,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1066,7 +959,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1080,7 +973,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1115,7 +1008,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1129,7 +1022,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1164,7 +1057,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1178,7 +1071,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1213,7 +1106,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1227,7 +1120,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1262,7 +1155,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1276,7 +1169,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1311,7 +1204,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1325,7 +1218,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1360,7 +1253,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1374,7 +1267,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1409,7 +1302,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1423,7 +1316,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1458,7 +1351,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1472,7 +1365,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1507,7 +1400,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1521,7 +1414,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1556,7 +1449,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1570,7 +1463,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1605,7 +1498,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1619,7 +1512,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1654,7 +1547,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1668,7 +1561,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1703,7 +1596,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1717,7 +1610,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1752,7 +1645,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1766,7 +1659,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1801,7 +1694,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1815,7 +1708,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1850,7 +1743,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1864,13 +1757,13 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
                             MessageBox.Show("Fecha y posición ocupada en el destino seleccionado!", "Sistema BestDay Media", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                             veitiseis.Checked = false;
+                            veitiseis.Checked = false;
                         }
                     }
 
@@ -1899,7 +1792,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1913,7 +1806,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1948,7 +1841,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -1962,7 +1855,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -1997,7 +1890,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -2011,7 +1904,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -2046,7 +1939,7 @@ namespace dashboard_medios
                     con.Close();
                     con.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
                     MySqlDataReader leer = cmd.ExecuteReader();
 
                     if (leer.Read())
@@ -2060,7 +1953,7 @@ namespace dashboard_medios
                         string consulta_destino = Convert.ToString(leer["destino"]);
                         variables.destino_consulta = consulta_destino;
 
-                        
+
 
                         if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
                         {
@@ -2079,9 +1972,58 @@ namespace dashboard_medios
             }
         }
 
-        private void destino_combo_TextChanged(object sender, EventArgs e)
+        private void treintauno_CheckStateChanged(object sender, EventArgs e)
         {
-            this.destino_combo.AutoCompleteCustomSource = collection;
+            try
+            {
+                if (this.treintauno.Checked == true)
+                {
+                    dia_seleccionado = "31";
+
+                    month();
+                    year();
+
+                    fecha_final = anio_seleccionado + "-" + mes_seleccionado + "-" + dia_seleccionado;
+
+                    con.Close();
+                    con.Open();
+
+                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
+                    MySqlDataReader leer = cmd.ExecuteReader();
+
+                    if (leer.Read())
+                    {
+                        string fecha_consulta_1 = Convert.ToString(leer["fecha_inicio"]);
+                        variables.fecha_consulta = fecha_consulta_1;
+
+                        string consulta_posicion = Convert.ToString(leer["posicion"]);
+                        variables.posicion_consulta = consulta_posicion;
+
+                        string consulta_destino = Convert.ToString(leer["destino"]);
+                        variables.destino_consulta = consulta_destino;
+
+
+
+                        if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
+                        {
+                            MessageBox.Show("Fecha y posición ocupada en el destino seleccionado!", "Sistema BestDay Media", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            treintauno.Checked = false;
+                        }
+                    }
+
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void calendar_sort_bd_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            verificar_dispo();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -2162,6 +2104,11 @@ namespace dashboard_medios
             treintauno.Checked = false;
         }
 
+        private void deleteRow_Click(object sender, EventArgs e)
+        {
+            registroFechasMedia.Rows.RemoveAt(registroFechasMedia.CurrentRow.Index);
+        }
+
         private void destino_combo_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -2173,7 +2120,7 @@ namespace dashboard_medios
                 List<SpecialDate> SpecialDates = new List<SpecialDate>();
 
                 con.Open();
-                string sql = "SELECT * FROM banners_rdb_bd WHERE posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ";
+                string sql = "SELECT * FROM sort_orders_liverp WHERE posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ";
                 MySqlCommand cmd = new MySqlCommand(sql, con);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -2204,91 +2151,30 @@ namespace dashboard_medios
             }
         }
 
-        private void treintauno_CheckStateChanged(object sender, EventArgs e)
+        public sort_orders_hoteles_liverp()
         {
-            try
-            {
-                if (this.treintauno.Checked == true)
-                {
-                    dia_seleccionado = "31";
+            InitializeComponent();
 
-                    month();
-                    year();
+            this.calendar_sort_bd.Culture = new CultureInfo("es-MX");
 
-                    fecha_final = anio_seleccionado + "-" + mes_seleccionado + "-" + dia_seleccionado;
+            destinos_combo();
 
-                    con.Close();
-                    con.Open();
+            comboMeses.SelectedIndex = 0;
+            comboAnio.SelectedIndex = 1;
+            destino_combo.SelectedIndex = 0;
+            posicion_combo.SelectedIndex = 0;
 
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM banners_rdb_bd WHERE fecha_inicio='" + fecha_final + "'AND posicion='" + posicion_combo.Text + "'AND destino='" + destino_combo.Text + "' ", con);
-                    MySqlDataReader leer = cmd.ExecuteReader();
-
-                    if (leer.Read())
-                    {
-                        string fecha_consulta_1 = Convert.ToString(leer["fecha_inicio"]);
-                        variables.fecha_consulta = fecha_consulta_1;
-
-                        string consulta_posicion = Convert.ToString(leer["posicion"]);
-                        variables.posicion_consulta = consulta_posicion;
-
-                        string consulta_destino = Convert.ToString(leer["destino"]);
-                        variables.destino_consulta = consulta_destino;
-
-                        
-
-                        if (variables.fecha_consulta == fecha_consulta_1 && variables.posicion_consulta == consulta_posicion && variables.destino_consulta == consulta_destino)
-                        {
-                            MessageBox.Show("Fecha y posición ocupada en el destino seleccionado!", "Sistema BestDay Media", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                            treintauno.Checked = false;
-                        }
-                    }
-
-                    con.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            account_text.Text = variables.nombre;
         }
 
-        private void deleteRow_Click(object sender, EventArgs e)
+        private void sort_orders_hoteles_hdo_Load(object sender, EventArgs e)
         {
-            registroFechasMedia.Rows.RemoveAt(registroFechasMedia.CurrentRow.Index);
+            carga_fechas();
+
+            this.calendar_sort_bd.ShowNavigationButton = false;
         }
 
-        //public void comboClientes()
-        //{
-        //    try
-        //    {
-        //        //string path = "server=172.20.3.45; database=bd-media; Uid=root; pwd=Medi@@dm1n!!;Allow Zero Datetime=False;Convert Zero Datetime=True";
-        //        string path = "server=162.241.60.127;database=ccascaru_bdm;Uid=ccascaru_root;pwd=Chay1318;";
-
-        //        MySqlConnection conecta = new MySqlConnection(path);
-        //        conecta.Close();
-
-        //        string selectQuery = "select id_clientes, nombre_comercial from clientes";
-        //        conecta.Open();
-        //        MySqlCommand command = new MySqlCommand(selectQuery, conecta);
-
-        //        MySqlDataAdapter mysqldt = new MySqlDataAdapter(command);
-        //        DataTable dt = new DataTable();
-        //        mysqldt.Fill(dt);
-
-        //        hotel_combo.ValueMember = "id_clientes";
-        //        hotel_combo.DisplayMember = "nombre_comercial";
-        //        hotel_combo.DataSource = dt;
-
-        //        conecta.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
-
-        public void destinos_combo()
+         public void destinos_combo()
         {
             try
             {
@@ -2305,11 +2191,42 @@ namespace dashboard_medios
                 destino_combo.ValueMember = "id";
                 destino_combo.DisplayMember = "destino";
                 destino_combo.DataSource = dt;
+
                 con.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void calendar_sort_bd_MouseDoubleClick_1(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                con.Close();
+
+                con.Open();
+
+                string sql = "SELECT * FROM sort_orders_liverp WHERE fecha_inicio='" + calendar_sort_bd.SelectedDate.Value.ToString("yyyy-MM-dd") + "' AND posicion='" + posicion_combo.Text + "' AND destino='" + destino_combo.Text + "' ";
+
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    fecha_evento = Convert.ToString(reader["fecha_inicio"]);
+                    string posicion = Convert.ToString(reader["posicion"]);
+                    string hotel = Convert.ToString(reader["hotel"]);
+
+                    string ocupado_sort = Convert.ToString(fecha_evento) + "\n" + Convert.ToString(posicion) + "\n" + Convert.ToString(hotel);
+
+                    MetroFramework.MetroMessageBox.Show(this, ocupado_sort, "Fecha ocupada en las siguientes posiciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                con.Close();
+            }
+            catch (Exception m)
+            {
+                MessageBox.Show(m.Message);
             }
         }
 
@@ -2776,7 +2693,7 @@ namespace dashboard_medios
 
                     fecha_final = anio_seleccionado + "-" + mes_seleccionado + "-" + dia_seleccionado;
 
-                    string sql = "SELECT fecha, posicion, destino FROM banners_rdb_bd where fecha_inicio = '" + fecha_final + "' and posicion = '" + posicion_combo.Text + "' and destino = '" + destino_combo.Text + "'";
+                    string sql = "SELECT fecha, posicion, destino FROM sort_orders_liverp where fecha_inicio = '" + fecha_final + "' and posicion = '" + posicion_combo.Text + "' and destino = '" + destino_combo.Text + "'";
                     MySqlCommand conslta = new MySqlCommand(sql, con);
                     MySqlDataReader reader = conslta.ExecuteReader();
                     if (reader.Read())
@@ -2827,7 +2744,7 @@ namespace dashboard_medios
                     List<SpecialDate> SpecialDates = new List<SpecialDate>();
 
                     con.Open();
-                    string sql = "SELECT * FROM banners_rdb_bd WHERE posicion='" + posicion_selected + "'AND destino='" + destino_combo.Text + "' ";
+                    string sql = "SELECT * FROM sort_orders_liverp WHERE posicion='" + posicion_selected + "'AND destino='" + destino_combo.Text + "' ";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     MySqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
@@ -2863,7 +2780,7 @@ namespace dashboard_medios
                     List<SpecialDate> SpecialDates = new List<SpecialDate>();
 
                     con.Open();
-                    string sql = "SELECT * FROM banners_rdb_bd WHERE posicion='" + posicion_selected + "'AND destino='" + destino_combo.Text + "' ";
+                    string sql = "SELECT * FROM sort_orders_liverp WHERE posicion='" + posicion_selected + "'AND destino='" + destino_combo.Text + "' ";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     MySqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
@@ -2899,43 +2816,7 @@ namespace dashboard_medios
                     List<SpecialDate> SpecialDates = new List<SpecialDate>();
 
                     con.Open();
-                    string sql = "SELECT * FROM banners_rdb_bd WHERE posicion='" + posicion_selected + "'AND destino='" + destino_combo.Text + "' ";
-                    MySqlCommand cmd = new MySqlCommand(sql, con);
-                    MySqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        fecha_evento = Convert.ToString(reader["fecha_inicio"]);
-
-                        DateTime date1 = DateTime.Parse(fecha_evento);
-
-                        year1 = date1.Year;
-                        month1 = date1.Month;
-                        day1 = date1.Day;
-
-                        SpecialDate specialDate1 = new SpecialDate();
-                        specialDate1.BackColor = System.Drawing.Color.LightSkyBlue;
-                        specialDate1.ForeColor = System.Drawing.Color.Black;
-                        specialDate1.Value = new System.DateTime(year1, month1, day1, 0, 0, 0, 0);
-
-                        SpecialDates.Add(specialDate1);
-                    }
-
-                    calendar_sort_bd.SpecialDates = SpecialDates;
-
-                    con.Close();
-                }
-
-                else if (posicion_combo.SelectedIndex == 3)
-                {
-                    string posicion_selected = "Cuarta";
-                    con.Close();
-
-                    calendar_sort_bd.Refresh();
-
-                    List<SpecialDate> SpecialDates = new List<SpecialDate>();
-
-                    con.Open();
-                    string sql = "SELECT * FROM banners_rdb_bd WHERE posicion='" + posicion_selected + "'AND destino='" + destino_combo.Text + "' ";
+                    string sql = "SELECT * FROM sort_orders_liverp WHERE posicion='" + posicion_selected + "'AND destino='" + destino_combo.Text + "' ";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     MySqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())

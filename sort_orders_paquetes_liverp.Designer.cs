@@ -1,6 +1,6 @@
 ﻿namespace dashboard_medios
 {
-    partial class sort_orders_hoteles_bd
+    partial class sort_orders_paquetes_liverp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sort_orders_hoteles_bd));
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.hotel_combo = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.posicion_combo = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.account_text = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.destino_combo = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sort_orders_paquetes_liverp));
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.deleteRow = new MetroFramework.Controls.MetroButton();
+            this.registroFechasMedia = new System.Windows.Forms.DataGridView();
+            this.fecha_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.posicion_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.destino_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotel_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.account_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.programing = new MetroFramework.Controls.MetroButton();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.no_select = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -77,18 +78,18 @@
             this.tres = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.dos = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.uno = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-            this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
-            this.deleteRow = new MetroFramework.Controls.MetroButton();
-            this.registroFechasMedia = new System.Windows.Forms.DataGridView();
-            this.fecha_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.posicion_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.destino_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hotel_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.account_so = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.programing = new MetroFramework.Controls.MetroButton();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.hotel_combo = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.posicion_combo = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.account_text = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.destino_combo = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.calendar_sort_bd = new Syncfusion.WinForms.Input.SfCalendar();
-            this.metroPanel1.SuspendLayout();
+            this.metroPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.registroFechasMedia)).BeginInit();
             this.metroPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treintauno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treinta)).BeginInit();
@@ -121,158 +122,96 @@
             ((System.ComponentModel.ISupportInitialize)(this.tres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uno)).BeginInit();
-            this.metroPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.registroFechasMedia)).BeginInit();
+            this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // metroPanel1
+            // metroLabel4
             // 
-            this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroPanel1.Controls.Add(this.hotel_combo);
-            this.metroPanel1.Controls.Add(this.metroLabel6);
-            this.metroPanel1.Controls.Add(this.posicion_combo);
-            this.metroPanel1.Controls.Add(this.metroLabel5);
-            this.metroPanel1.Controls.Add(this.account_text);
-            this.metroPanel1.Controls.Add(this.metroLabel2);
-            this.metroPanel1.Controls.Add(this.destino_combo);
-            this.metroPanel1.Controls.Add(this.metroLabel1);
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(23, 63);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(399, 252);
-            this.metroPanel1.TabIndex = 14;
-            this.metroPanel1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(22, 324);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(124, 19);
+            this.metroLabel4.TabIndex = 37;
+            this.metroLabel4.Text = "Calendario general:";
+            this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // hotel_combo
+            // metroPanel3
             // 
+            this.metroPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel3.Controls.Add(this.deleteRow);
+            this.metroPanel3.Controls.Add(this.registroFechasMedia);
+            this.metroPanel3.Controls.Add(this.programing);
+            this.metroPanel3.HorizontalScrollbarBarColor = true;
+            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.HorizontalScrollbarSize = 10;
+            this.metroPanel3.Location = new System.Drawing.Point(427, 461);
+            this.metroPanel3.Name = "metroPanel3";
+            this.metroPanel3.Size = new System.Drawing.Size(611, 226);
+            this.metroPanel3.TabIndex = 36;
+            this.metroPanel3.VerticalScrollbarBarColor = true;
+            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.VerticalScrollbarSize = 10;
             // 
+            // deleteRow
             // 
+            this.deleteRow.Location = new System.Drawing.Point(19, 191);
+            this.deleteRow.Name = "deleteRow";
+            this.deleteRow.Size = new System.Drawing.Size(115, 23);
+            this.deleteRow.TabIndex = 39;
+            this.deleteRow.Text = "Borrar seleccionado";
+            this.deleteRow.UseSelectable = true;
+            this.deleteRow.Click += new System.EventHandler(this.deleteRow_Click);
             // 
-            this.hotel_combo.CustomButton.Image = null;
-            this.hotel_combo.CustomButton.Location = new System.Drawing.Point(359, 1);
-            this.hotel_combo.CustomButton.Name = "";
-            this.hotel_combo.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.hotel_combo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.hotel_combo.CustomButton.TabIndex = 1;
-            this.hotel_combo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.hotel_combo.CustomButton.UseSelectable = true;
-            this.hotel_combo.CustomButton.Visible = false;
-            this.hotel_combo.Lines = new string[0];
-            this.hotel_combo.Location = new System.Drawing.Point(9, 204);
-            this.hotel_combo.MaxLength = 32767;
-            this.hotel_combo.Name = "hotel_combo";
-            this.hotel_combo.PasswordChar = '\0';
-            this.hotel_combo.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.hotel_combo.SelectedText = "";
-            this.hotel_combo.SelectionLength = 0;
-            this.hotel_combo.SelectionStart = 0;
-            this.hotel_combo.ShortcutsEnabled = true;
-            this.hotel_combo.Size = new System.Drawing.Size(381, 23);
-            this.hotel_combo.TabIndex = 31;
-            this.hotel_combo.UseSelectable = true;
-            this.hotel_combo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.hotel_combo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // registroFechasMedia
             // 
-            // metroLabel6
+            this.registroFechasMedia.AllowUserToAddRows = false;
+            this.registroFechasMedia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.registroFechasMedia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fecha_so,
+            this.posicion_so,
+            this.destino_so,
+            this.hotel_so,
+            this.account_so});
+            this.registroFechasMedia.Location = new System.Drawing.Point(19, 11);
+            this.registroFechasMedia.Name = "registroFechasMedia";
+            this.registroFechasMedia.Size = new System.Drawing.Size(578, 174);
+            this.registroFechasMedia.TabIndex = 38;
             // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(9, 182);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(43, 19);
-            this.metroLabel6.TabIndex = 30;
-            this.metroLabel6.Text = "Hotel:";
-            this.metroLabel6.Theme = MetroFramework.MetroThemeStyle.Light;
+            // fecha_so
             // 
-            // posicion_combo
+            this.fecha_so.HeaderText = "Fecha";
+            this.fecha_so.Name = "fecha_so";
             // 
-            this.posicion_combo.FormattingEnabled = true;
-            this.posicion_combo.ItemHeight = 23;
-            this.posicion_combo.Items.AddRange(new object[] {
-            "Primera",
-            "Segunda",
-            "Tercera"});
-            this.posicion_combo.Location = new System.Drawing.Point(9, 150);
-            this.posicion_combo.Name = "posicion_combo";
-            this.posicion_combo.Size = new System.Drawing.Size(381, 29);
-            this.posicion_combo.TabIndex = 29;
-            this.posicion_combo.UseSelectable = true;
-            this.posicion_combo.SelectedIndexChanged += new System.EventHandler(this.posicion_combo_SelectedIndexChanged);
+            // posicion_so
             // 
-            // metroLabel5
+            this.posicion_so.HeaderText = "Posición";
+            this.posicion_so.Name = "posicion_so";
             // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(9, 128);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(59, 19);
-            this.metroLabel5.TabIndex = 28;
-            this.metroLabel5.Text = "Posición:";
-            this.metroLabel5.Theme = MetroFramework.MetroThemeStyle.Light;
+            // destino_so
             // 
-            // account_text
+            this.destino_so.HeaderText = "Destino";
+            this.destino_so.Name = "destino_so";
             // 
+            // hotel_so
             // 
+            this.hotel_so.HeaderText = "Hotel";
+            this.hotel_so.Name = "hotel_so";
+            this.hotel_so.Width = 400;
             // 
+            // account_so
             // 
-            this.account_text.CustomButton.Image = null;
-            this.account_text.CustomButton.Location = new System.Drawing.Point(359, 1);
-            this.account_text.CustomButton.Name = "";
-            this.account_text.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.account_text.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.account_text.CustomButton.TabIndex = 1;
-            this.account_text.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.account_text.CustomButton.UseSelectable = true;
-            this.account_text.CustomButton.Visible = false;
-            this.account_text.Lines = new string[0];
-            this.account_text.Location = new System.Drawing.Point(9, 94);
-            this.account_text.MaxLength = 32767;
-            this.account_text.Name = "account_text";
-            this.account_text.PasswordChar = '\0';
-            this.account_text.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.account_text.SelectedText = "";
-            this.account_text.SelectionLength = 0;
-            this.account_text.SelectionStart = 0;
-            this.account_text.ShortcutsEnabled = true;
-            this.account_text.Size = new System.Drawing.Size(381, 23);
-            this.account_text.TabIndex = 27;
-            this.account_text.UseSelectable = true;
-            this.account_text.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.account_text.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.account_so.HeaderText = "Account";
+            this.account_so.Name = "account_so";
             // 
-            // metroLabel2
+            // programing
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(9, 72);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(110, 19);
-            this.metroLabel2.TabIndex = 26;
-            this.metroLabel2.Text = "Accout Manager:";
-            this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // destino_combo
-            // 
-            this.destino_combo.FormattingEnabled = true;
-            this.destino_combo.ItemHeight = 23;
-            this.destino_combo.Location = new System.Drawing.Point(9, 35);
-            this.destino_combo.Name = "destino_combo";
-            this.destino_combo.Size = new System.Drawing.Size(381, 29);
-            this.destino_combo.TabIndex = 25;
-            this.destino_combo.UseSelectable = true;
-            this.destino_combo.SelectedIndexChanged += new System.EventHandler(this.destino_combo_SelectedIndexChanged);
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(9, 13);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(120, 19);
-            this.metroLabel1.TabIndex = 24;
-            this.metroLabel1.Text = "Selecciona Destino:";
-            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.programing.Location = new System.Drawing.Point(504, 191);
+            this.programing.Name = "programing";
+            this.programing.Size = new System.Drawing.Size(93, 23);
+            this.programing.TabIndex = 35;
+            this.programing.Text = "Programar";
+            this.programing.UseSelectable = true;
+            this.programing.Click += new System.EventHandler(this.programing_Click);
             // 
             // metroPanel2
             // 
@@ -318,10 +257,10 @@
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(428, 63);
+            this.metroPanel2.Location = new System.Drawing.Point(427, 63);
             this.metroPanel2.Name = "metroPanel2";
             this.metroPanel2.Size = new System.Drawing.Size(611, 392);
-            this.metroPanel2.TabIndex = 15;
+            this.metroPanel2.TabIndex = 35;
             this.metroPanel2.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
@@ -329,7 +268,7 @@
             // 
             // no_select
             // 
-            this.no_select.Location = new System.Drawing.Point(462, 35);
+            this.no_select.Location = new System.Drawing.Point(461, 35);
             this.no_select.Name = "no_select";
             this.no_select.Size = new System.Drawing.Size(135, 23);
             this.no_select.TabIndex = 44;
@@ -339,7 +278,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(353, 35);
+            this.metroButton1.Location = new System.Drawing.Point(352, 35);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(103, 23);
             this.metroButton1.TabIndex = 43;
@@ -350,7 +289,7 @@
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(174, 13);
+            this.metroLabel7.Location = new System.Drawing.Point(173, 13);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(113, 19);
             this.metroLabel7.TabIndex = 41;
@@ -367,7 +306,7 @@
             "2021",
             "2022",
             "2023"});
-            this.comboAnio.Location = new System.Drawing.Point(174, 35);
+            this.comboAnio.Location = new System.Drawing.Point(173, 35);
             this.comboAnio.Name = "comboAnio";
             this.comboAnio.Size = new System.Drawing.Size(158, 29);
             this.comboAnio.TabIndex = 42;
@@ -376,7 +315,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(10, 13);
+            this.metroLabel3.Location = new System.Drawing.Point(9, 13);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(115, 19);
             this.metroLabel3.TabIndex = 39;
@@ -400,7 +339,7 @@
             "Octubre",
             "Noviembre",
             "Diciembre"});
-            this.comboMeses.Location = new System.Drawing.Point(10, 35);
+            this.comboMeses.Location = new System.Drawing.Point(9, 35);
             this.comboMeses.Name = "comboMeses";
             this.comboMeses.Size = new System.Drawing.Size(158, 29);
             this.comboMeses.TabIndex = 40;
@@ -409,7 +348,7 @@
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(462, 354);
+            this.add.Location = new System.Drawing.Point(455, 353);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(135, 23);
             this.add.TabIndex = 34;
@@ -819,123 +758,186 @@
             this.uno.Text = "1";
             this.uno.ThemesEnabled = true;
             this.uno.CheckStateChanged += new System.EventHandler(this.uno_CheckStateChanged);
-            this.uno.CheckedChanged += new System.EventHandler(this.uno_CheckedChanged);
             // 
-            // metroPanel3
+            // metroPanel1
             // 
-            this.metroPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroPanel3.Controls.Add(this.deleteRow);
-            this.metroPanel3.Controls.Add(this.registroFechasMedia);
-            this.metroPanel3.Controls.Add(this.programing);
-            this.metroPanel3.HorizontalScrollbarBarColor = true;
-            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel3.HorizontalScrollbarSize = 10;
-            this.metroPanel3.Location = new System.Drawing.Point(428, 461);
-            this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(611, 226);
-            this.metroPanel3.TabIndex = 16;
-            this.metroPanel3.VerticalScrollbarBarColor = true;
-            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel3.VerticalScrollbarSize = 10;
+            this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel1.Controls.Add(this.hotel_combo);
+            this.metroPanel1.Controls.Add(this.metroLabel6);
+            this.metroPanel1.Controls.Add(this.posicion_combo);
+            this.metroPanel1.Controls.Add(this.metroLabel5);
+            this.metroPanel1.Controls.Add(this.account_text);
+            this.metroPanel1.Controls.Add(this.metroLabel2);
+            this.metroPanel1.Controls.Add(this.destino_combo);
+            this.metroPanel1.Controls.Add(this.metroLabel1);
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(22, 63);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(399, 252);
+            this.metroPanel1.TabIndex = 34;
+            this.metroPanel1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // deleteRow
+            // hotel_combo
             // 
-            this.deleteRow.Location = new System.Drawing.Point(19, 191);
-            this.deleteRow.Name = "deleteRow";
-            this.deleteRow.Size = new System.Drawing.Size(115, 23);
-            this.deleteRow.TabIndex = 39;
-            this.deleteRow.Text = "Borrar seleccionado";
-            this.deleteRow.UseSelectable = true;
-            this.deleteRow.Click += new System.EventHandler(this.deleteRow_Click);
             // 
-            // registroFechasMedia
             // 
-            this.registroFechasMedia.AllowUserToAddRows = false;
-            this.registroFechasMedia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.registroFechasMedia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fecha_so,
-            this.posicion_so,
-            this.destino_so,
-            this.hotel_so,
-            this.account_so});
-            this.registroFechasMedia.Location = new System.Drawing.Point(19, 11);
-            this.registroFechasMedia.Name = "registroFechasMedia";
-            this.registroFechasMedia.Size = new System.Drawing.Size(578, 174);
-            this.registroFechasMedia.TabIndex = 38;
             // 
-            // fecha_so
+            this.hotel_combo.CustomButton.Image = null;
+            this.hotel_combo.CustomButton.Location = new System.Drawing.Point(359, 1);
+            this.hotel_combo.CustomButton.Name = "";
+            this.hotel_combo.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.hotel_combo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.hotel_combo.CustomButton.TabIndex = 1;
+            this.hotel_combo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.hotel_combo.CustomButton.UseSelectable = true;
+            this.hotel_combo.CustomButton.Visible = false;
+            this.hotel_combo.Lines = new string[0];
+            this.hotel_combo.Location = new System.Drawing.Point(9, 204);
+            this.hotel_combo.MaxLength = 32767;
+            this.hotel_combo.Name = "hotel_combo";
+            this.hotel_combo.PasswordChar = '\0';
+            this.hotel_combo.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.hotel_combo.SelectedText = "";
+            this.hotel_combo.SelectionLength = 0;
+            this.hotel_combo.SelectionStart = 0;
+            this.hotel_combo.ShortcutsEnabled = true;
+            this.hotel_combo.Size = new System.Drawing.Size(381, 23);
+            this.hotel_combo.TabIndex = 31;
+            this.hotel_combo.UseSelectable = true;
+            this.hotel_combo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.hotel_combo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.fecha_so.HeaderText = "Fecha";
-            this.fecha_so.Name = "fecha_so";
+            // metroLabel6
             // 
-            // posicion_so
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(9, 182);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(43, 19);
+            this.metroLabel6.TabIndex = 30;
+            this.metroLabel6.Text = "Hotel:";
+            this.metroLabel6.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            this.posicion_so.HeaderText = "Posición";
-            this.posicion_so.Name = "posicion_so";
+            // posicion_combo
             // 
-            // destino_so
+            this.posicion_combo.FormattingEnabled = true;
+            this.posicion_combo.ItemHeight = 23;
+            this.posicion_combo.Items.AddRange(new object[] {
+            "Primera",
+            "Segunda",
+            "Tercera"});
+            this.posicion_combo.Location = new System.Drawing.Point(9, 150);
+            this.posicion_combo.Name = "posicion_combo";
+            this.posicion_combo.Size = new System.Drawing.Size(381, 29);
+            this.posicion_combo.TabIndex = 29;
+            this.posicion_combo.UseSelectable = true;
+            this.posicion_combo.SelectedIndexChanged += new System.EventHandler(this.posicion_combo_SelectedIndexChanged);
             // 
-            this.destino_so.HeaderText = "Destino";
-            this.destino_so.Name = "destino_so";
+            // metroLabel5
             // 
-            // hotel_so
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(9, 128);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(59, 19);
+            this.metroLabel5.TabIndex = 28;
+            this.metroLabel5.Text = "Posición:";
+            this.metroLabel5.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            this.hotel_so.HeaderText = "Hotel";
-            this.hotel_so.Name = "hotel_so";
-            this.hotel_so.Width = 400;
+            // account_text
             // 
-            // account_so
             // 
-            this.account_so.HeaderText = "Account";
-            this.account_so.Name = "account_so";
             // 
-            // programing
             // 
-            this.programing.Location = new System.Drawing.Point(504, 191);
-            this.programing.Name = "programing";
-            this.programing.Size = new System.Drawing.Size(93, 23);
-            this.programing.TabIndex = 35;
-            this.programing.Text = "Programar";
-            this.programing.UseSelectable = true;
-            this.programing.Click += new System.EventHandler(this.programing_Click);
+            this.account_text.CustomButton.Image = null;
+            this.account_text.CustomButton.Location = new System.Drawing.Point(359, 1);
+            this.account_text.CustomButton.Name = "";
+            this.account_text.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.account_text.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.account_text.CustomButton.TabIndex = 1;
+            this.account_text.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.account_text.CustomButton.UseSelectable = true;
+            this.account_text.CustomButton.Visible = false;
+            this.account_text.Lines = new string[0];
+            this.account_text.Location = new System.Drawing.Point(9, 94);
+            this.account_text.MaxLength = 32767;
+            this.account_text.Name = "account_text";
+            this.account_text.PasswordChar = '\0';
+            this.account_text.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.account_text.SelectedText = "";
+            this.account_text.SelectionLength = 0;
+            this.account_text.SelectionStart = 0;
+            this.account_text.ShortcutsEnabled = true;
+            this.account_text.Size = new System.Drawing.Size(381, 23);
+            this.account_text.TabIndex = 27;
+            this.account_text.UseSelectable = true;
+            this.account_text.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.account_text.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroLabel4
+            // metroLabel2
             // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(23, 324);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(124, 19);
-            this.metroLabel4.TabIndex = 32;
-            this.metroLabel4.Text = "Calendario general:";
-            this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(9, 72);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(110, 19);
+            this.metroLabel2.TabIndex = 26;
+            this.metroLabel2.Text = "Accout Manager:";
+            this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // destino_combo
+            // 
+            this.destino_combo.FormattingEnabled = true;
+            this.destino_combo.ItemHeight = 23;
+            this.destino_combo.Location = new System.Drawing.Point(9, 35);
+            this.destino_combo.Name = "destino_combo";
+            this.destino_combo.Size = new System.Drawing.Size(381, 29);
+            this.destino_combo.TabIndex = 25;
+            this.destino_combo.UseSelectable = true;
+            this.destino_combo.SelectedIndexChanged += new System.EventHandler(this.destino_combo_SelectedIndexChanged);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(9, 13);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(120, 19);
+            this.metroLabel1.TabIndex = 24;
+            this.metroLabel1.Text = "Selecciona Destino:";
+            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // calendar_sort_bd
             // 
-            this.calendar_sort_bd.Location = new System.Drawing.Point(23, 346);
+            this.calendar_sort_bd.AllowDrop = true;
+            this.calendar_sort_bd.Culture = new System.Globalization.CultureInfo("en-US");
+            this.calendar_sort_bd.Location = new System.Drawing.Point(22, 346);
             this.calendar_sort_bd.Name = "calendar_sort_bd";
-            this.calendar_sort_bd.Size = new System.Drawing.Size(399, 337);
+            this.calendar_sort_bd.Size = new System.Drawing.Size(399, 341);
             this.calendar_sort_bd.TabIndex = 33;
             this.calendar_sort_bd.Text = "sfCalendar1";
-            this.calendar_sort_bd.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.calendar_sort_bd_MouseDoubleClick_1);
+            this.calendar_sort_bd.DoubleClick += new System.EventHandler(this.calendar_sort_bd_DoubleClick);
             // 
-            // sort_orders_hoteles_bd
+            // sort_orders_paquetes_liverp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 706);
-            this.Controls.Add(this.calendar_sort_bd);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
+            this.Controls.Add(this.calendar_sort_bd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "sort_orders_hoteles_bd";
+            this.Name = "sort_orders_paquetes_liverp";
             this.Resizable = false;
-            this.Text = "Sort Order Hoteles BD";
-            this.Load += new System.EventHandler(this.sort_orders_bd_Load);
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
+            this.Style = MetroFramework.MetroColorStyle.Lime;
+            this.Text = "Sort Order Paquetes Liverpool";
+            this.Load += new System.EventHandler(this.sort_orders_paquetes_bd_Load);
+            this.metroPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.registroFechasMedia)).EndInit();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treintauno)).EndInit();
@@ -969,24 +971,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.tres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uno)).EndInit();
-            this.metroPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.registroFechasMedia)).EndInit();
+            this.metroPanel1.ResumeLayout(false);
+            this.metroPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroComboBox posicion_combo;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroTextBox account_text;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroComboBox destino_combo;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroPanel metroPanel3;
+        private MetroFramework.Controls.MetroButton deleteRow;
+        private System.Windows.Forms.DataGridView registroFechasMedia;
+        private MetroFramework.Controls.MetroButton programing;
         private MetroFramework.Controls.MetroPanel metroPanel2;
-        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv uno;
+        private MetroFramework.Controls.MetroButton add;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv treintauno;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv treinta;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv veitinueve;
@@ -1017,12 +1017,16 @@
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv cuatro;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv tres;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv dos;
-        private MetroFramework.Controls.MetroButton add;
-        private MetroFramework.Controls.MetroPanel metroPanel3;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroButton programing;
-        private System.Windows.Forms.DataGridView registroFechasMedia;
-        private MetroFramework.Controls.MetroButton deleteRow;
+        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv uno;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroComboBox posicion_combo;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroTextBox account_text;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroComboBox destino_combo;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private Syncfusion.WinForms.Input.SfCalendar calendar_sort_bd;
         private MetroFramework.Controls.MetroTextBox hotel_combo;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_so;
         private System.Windows.Forms.DataGridViewTextBoxColumn posicion_so;
@@ -1035,6 +1039,5 @@
         private MetroFramework.Controls.MetroComboBox comboAnio;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroComboBox comboMeses;
-        private Syncfusion.WinForms.Input.SfCalendar calendar_sort_bd;
     }
 }

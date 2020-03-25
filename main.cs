@@ -51,5 +51,11 @@ namespace dashboard_medios
             menu_take formlario = new menu_take();
             formlario.Show();
         }
+
+        private void info_notes_Click(object sender, EventArgs e)
+        {
+            info_notes formlario = new info_notes();
+            formlario.Show();
+        }
     }
 }

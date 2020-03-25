@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace dashboard_medios
 {
-    public partial class take_over_bd : MetroFramework.Forms.MetroForm
+    public partial class take_over_hdo : MetroFramework.Forms.MetroForm
     {
         MySqlConnection con = new MySqlConnection(variables.Sentencia);
 
@@ -24,7 +24,7 @@ namespace dashboard_medios
         string fecha_evento, hotel, fecha_tb, hotel_tb = "";
 
 
-        public take_over_bd()
+        public take_over_hdo()
         {
             InitializeComponent();
 
@@ -43,7 +43,7 @@ namespace dashboard_medios
                 List<SpecialDate> SpecialDates = new List<SpecialDate>();
 
                 con.Open();
-                string sql = "SELECT fecha FROM take_over_bd";
+                string sql = "SELECT fecha FROM take_over_hdo";
                 MySqlCommand cmd = new MySqlCommand(sql, con);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -86,7 +86,7 @@ namespace dashboard_medios
 
                 con.Open();
 
-                string sql = "SELECT * FROM take_over_bd where fecha = '" + timer_banner_bdm.SelectedDate.Value.ToString("yyyy-MM-dd") + "'";
+                string sql = "SELECT * FROM take_over_hdo where fecha = '" + timer_banner_bdm.SelectedDate.Value.ToString("yyyy-MM-dd") + "'";
 
                 MySqlCommand cmd = new MySqlCommand(sql, con);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -136,7 +136,7 @@ namespace dashboard_medios
         {
             try
             {
-                MySqlCommand agregar = new MySqlCommand("INSERT INTO take_over_bd (`fecha` , `hotel`, `account`) VALUES (?fecha , ?hotel, ?account)", con);
+                MySqlCommand agregar = new MySqlCommand("INSERT INTO take_over_hdo (`fecha` , `hotel`, `account`) VALUES (?fecha , ?hotel, ?account)", con);
 
                 con.Close();
                 con.Open();

@@ -39,5 +39,11 @@ namespace dashboard_medios
             calendar_so_paquetes_bd formlario = new calendar_so_paquetes_bd();
             formlario.Show();
         }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            sort_orders_paquetes_liverp formlario = new sort_orders_paquetes_liverp();
+            formlario.Show();
+        }
     }
 }

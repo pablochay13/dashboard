@@ -151,7 +151,7 @@ namespace dashboard_medios
 
 
                 //Sending the DataGridView's HTML in Email.
-                using (MailMessage mm = new MailMessage("pablochay.bd@gmail.com", "lizeth.chi@bestday.com"))
+                using (MailMessage mm = new MailMessage("pablochay.bd@gmail.com", "maria.paxtian@bestday.com"))
                 {
                     MailAddress copy = new MailAddress("pamador@bestday.com");
                     mm.CC.Add(copy);

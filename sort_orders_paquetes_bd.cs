@@ -482,7 +482,7 @@ namespace dashboard_medios
 
 
                 //Sending the DataGridView's HTML in Email.
-                using (MailMessage mm = new MailMessage("pablochay.bd@gmail.com", "lizeth.chi@bestday.com"))
+                using (MailMessage mm = new MailMessage("pablochay.bd@gmail.com", "maria.paxtian@bestday.com"))
                 {
                     MailAddress copy = new MailAddress("pamador@bestday.com");
                     mm.CC.Add(copy);
@@ -2109,7 +2109,15 @@ namespace dashboard_medios
             veitiocho.Checked = true;
             veitinueve.Checked = true;
             treinta.Checked = true;
-            treintauno.Checked = true;
+
+            if (comboMeses.SelectedIndex == 3 || comboMeses.SelectedIndex == 5 || comboMeses.SelectedIndex == 8 || comboMeses.SelectedIndex == 10 || comboMeses.SelectedIndex == 1 && comboAnio.SelectedIndex == 1)
+            {
+                treintauno.Checked = false;
+            }
+            else
+            {
+                treintauno.Checked = true;
+            }
         }
 
         private void no_select_Click(object sender, EventArgs e)

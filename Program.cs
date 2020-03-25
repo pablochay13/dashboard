@@ -17,7 +17,7 @@ namespace dashboard_medios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new main());
+            //Application.Run(new sort_orders_hoteles_liverp());
 
             try
             {
