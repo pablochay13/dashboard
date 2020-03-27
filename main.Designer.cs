@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.info_notes = new System.Windows.Forms.PictureBox();
             this.so_paquetes = new MetroFramework.Controls.MetroTile();
@@ -38,6 +39,7 @@
             this.banner_rdb = new MetroFramework.Controls.MetroTile();
             this.timer_baner = new MetroFramework.Controls.MetroTile();
             this.sort_order = new MetroFramework.Controls.MetroTile();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.info_notes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,12 +47,13 @@
             // 
             this.info_notes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.info_notes.Image = global::dashboard_medios.Properties.Resources.notepad;
-            this.info_notes.Location = new System.Drawing.Point(569, 24);
+            this.info_notes.Location = new System.Drawing.Point(569, 18);
             this.info_notes.Name = "info_notes";
             this.info_notes.Size = new System.Drawing.Size(36, 36);
             this.info_notes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.info_notes.TabIndex = 9;
             this.info_notes.TabStop = false;
+            this.toolTip1.SetToolTip(this.info_notes, "Notas de versión");
             this.info_notes.Click += new System.EventHandler(this.info_notes_Click);
             // 
             // so_paquetes
@@ -213,5 +216,6 @@
         private MetroFramework.Controls.MetroTile take_over;
         private MetroFramework.Controls.MetroTile so_paquetes;
         private System.Windows.Forms.PictureBox info_notes;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

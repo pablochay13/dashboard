@@ -39,5 +39,11 @@ namespace dashboard_medios
             calendar_rdb_bd formlario = new calendar_rdb_bd();
             formlario.Show();
         }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            banners_rdb_liverp formlario = new banners_rdb_liverp();
+            formlario.Show();
+        }
     }
 }

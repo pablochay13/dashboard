@@ -30,7 +30,7 @@
     <PublisherName>Pablo Chay</PublisherName>
     <SuiteName>Best Travel Media</SuiteName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -130,6 +130,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="banners_rdb_liverp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="banners_rdb_liverp.Designer.cs">
+      <DependentUpon>banners_rdb_liverp.cs</DependentUpon>
+    </Compile>
     <Compile Include="banners_rdb_bd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,6 +296,9 @@
       <DependentUpon>timer_banner_bd_full.cs</DependentUpon>
     </Compile>
     <Compile Include="variables.cs" />
+    <EmbeddedResource Include="banners_rdb_liverp.resx">
+      <DependentUpon>banners_rdb_liverp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="banners_rdb_bd.resx">
       <DependentUpon>banners_rdb_bd.cs</DependentUpon>
     </EmbeddedResource>
