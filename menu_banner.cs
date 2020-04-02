@@ -45,5 +45,41 @@ namespace dashboard_medios
             banners_rdb_liverp formlario = new banners_rdb_liverp();
             formlario.Show();
         }
+
+        private void metroButton6_Click(object sender, EventArgs e)
+        {
+            banners_rdb_coppel formlario = new banners_rdb_coppel();
+            formlario.Show();
+        }
+
+        private void metroButton5_Click(object sender, EventArgs e)
+        {
+            banners_rdb_united formlario = new banners_rdb_united();
+            formlario.Show();
+        }
+
+        private void metroButton4_Click(object sender, EventArgs e)
+        {
+            banners_rdb_tar formlario = new banners_rdb_tar();
+            formlario.Show();
+        }
+
+        private void metroButton9_Click(object sender, EventArgs e)
+        {
+            banners_rdb_bancomer formlario = new banners_rdb_bancomer();
+            formlario.Show();
+        }
+
+        private void metroButton8_Click(object sender, EventArgs e)
+        {
+            banners_rdb_viva formlario = new banners_rdb_viva();
+            formlario.Show();
+        }
+
+        private void metroButton7_Click(object sender, EventArgs e)
+        {
+            banners_rdb_long formlario = new banners_rdb_long();
+            formlario.Show();
+        }
     }
 }

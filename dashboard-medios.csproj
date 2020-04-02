@@ -30,7 +30,7 @@
     <PublisherName>Pablo Chay</PublisherName>
     <SuiteName>Best Travel Media</SuiteName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -130,6 +130,42 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="banners_rdb_long.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="banners_rdb_long.Designer.cs">
+      <DependentUpon>banners_rdb_long.cs</DependentUpon>
+    </Compile>
+    <Compile Include="banners_rdb_viva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="banners_rdb_viva.Designer.cs">
+      <DependentUpon>banners_rdb_viva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="banners_rdb_bancomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="banners_rdb_bancomer.Designer.cs">
+      <DependentUpon>banners_rdb_bancomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="banners_rdb_united.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="banners_rdb_united.Designer.cs">
+      <DependentUpon>banners_rdb_united.cs</DependentUpon>
+    </Compile>
+    <Compile Include="banners_rdb_tar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="banners_rdb_tar.Designer.cs">
+      <DependentUpon>banners_rdb_tar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="banners_rdb_coppel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="banners_rdb_coppel.Designer.cs">
+      <DependentUpon>banners_rdb_coppel.cs</DependentUpon>
+    </Compile>
     <Compile Include="banners_rdb_liverp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +265,18 @@
     <Compile Include="sort_orders_hoteles_full.Designer.cs">
       <DependentUpon>sort_orders_hoteles_full.cs</DependentUpon>
     </Compile>
+    <Compile Include="sort_orders_hoteles_bd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sort_orders_hoteles_bd.Designer.cs">
+      <DependentUpon>sort_orders_hoteles_bd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sort_orders_hoteles_coppel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sort_orders_hoteles_coppel.Designer.cs">
+      <DependentUpon>sort_orders_hoteles_coppel.cs</DependentUpon>
+    </Compile>
     <Compile Include="sort_orders_hoteles_liverp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +344,24 @@
       <DependentUpon>timer_banner_bd_full.cs</DependentUpon>
     </Compile>
     <Compile Include="variables.cs" />
+    <EmbeddedResource Include="banners_rdb_long.resx">
+      <DependentUpon>banners_rdb_long.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="banners_rdb_viva.resx">
+      <DependentUpon>banners_rdb_viva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="banners_rdb_bancomer.resx">
+      <DependentUpon>banners_rdb_bancomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="banners_rdb_united.resx">
+      <DependentUpon>banners_rdb_united.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="banners_rdb_tar.resx">
+      <DependentUpon>banners_rdb_tar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="banners_rdb_coppel.resx">
+      <DependentUpon>banners_rdb_coppel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="banners_rdb_liverp.resx">
       <DependentUpon>banners_rdb_liverp.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +419,12 @@
     </Compile>
     <EmbeddedResource Include="sort_orders_hoteles_full.resx">
       <DependentUpon>sort_orders_hoteles_full.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sort_orders_hoteles_bd.resx">
+      <DependentUpon>sort_orders_hoteles_bd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sort_orders_hoteles_coppel.resx">
+      <DependentUpon>sort_orders_hoteles_coppel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sort_orders_hoteles_liverp.resx">
       <DependentUpon>sort_orders_hoteles_liverp.cs</DependentUpon>

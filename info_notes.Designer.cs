@@ -40,7 +40,8 @@
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox1.Size = new System.Drawing.Size(230, 261);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = resources.GetString("textBox1.Text");
+            this.textBox1.Text = "Versión 1.0.0.8\r\n\r\n¬ Se agregaron RBD: Coppel, United, TAR, Bancomer, Viva Aerobu" +
+    "s y Long Tail\r\n\r\n¬ Se agreto Sort Order hoteles: Coppel";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // info_notes

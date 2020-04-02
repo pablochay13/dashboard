@@ -41,6 +41,10 @@
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.metroButton6 = new MetroFramework.Controls.MetroButton();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroButton7 = new MetroFramework.Controls.MetroButton();
+            this.metroButton8 = new MetroFramework.Controls.MetroButton();
+            this.metroButton9 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // list
@@ -156,11 +160,52 @@
             this.metroButton6.UseSelectable = true;
             this.metroButton6.Click += new System.EventHandler(this.metroButton6_Click);
             // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(23, 309);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(52, 19);
+            this.metroLabel4.TabIndex = 24;
+            this.metroLabel4.Text = "Coppel";
+            // 
+            // metroButton7
+            // 
+            this.metroButton7.Location = new System.Drawing.Point(265, 331);
+            this.metroButton7.Name = "metroButton7";
+            this.metroButton7.Size = new System.Drawing.Size(115, 29);
+            this.metroButton7.TabIndex = 23;
+            this.metroButton7.Text = "Calendario";
+            this.metroButton7.UseSelectable = true;
+            // 
+            // metroButton8
+            // 
+            this.metroButton8.Location = new System.Drawing.Point(144, 331);
+            this.metroButton8.Name = "metroButton8";
+            this.metroButton8.Size = new System.Drawing.Size(115, 29);
+            this.metroButton8.TabIndex = 22;
+            this.metroButton8.Text = "Listar";
+            this.metroButton8.UseSelectable = true;
+            // 
+            // metroButton9
+            // 
+            this.metroButton9.Location = new System.Drawing.Point(23, 331);
+            this.metroButton9.Name = "metroButton9";
+            this.metroButton9.Size = new System.Drawing.Size(115, 29);
+            this.metroButton9.TabIndex = 21;
+            this.metroButton9.Text = "Programar";
+            this.metroButton9.UseSelectable = true;
+            this.metroButton9.Click += new System.EventHandler(this.metroButton9_Click);
+            // 
             // menu_hoteles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 311);
+            this.ClientSize = new System.Drawing.Size(405, 394);
+            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.metroButton7);
+            this.Controls.Add(this.metroButton8);
+            this.Controls.Add(this.metroButton9);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroButton4);
             this.Controls.Add(this.metroButton5);
@@ -198,5 +243,9 @@
         private MetroFramework.Controls.MetroButton metroButton4;
         private MetroFramework.Controls.MetroButton metroButton5;
         private MetroFramework.Controls.MetroButton metroButton6;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroButton metroButton7;
+        private MetroFramework.Controls.MetroButton metroButton8;
+        private MetroFramework.Controls.MetroButton metroButton9;
     }
 }

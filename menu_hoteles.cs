@@ -24,7 +24,7 @@ namespace dashboard_medios
 
         private void program_Click(object sender, EventArgs e)
         {
-            sort_orders_hoteles_liverp formlario = new sort_orders_hoteles_liverp();
+            sort_orders_hoteles_bd formlario = new sort_orders_hoteles_bd();
             formlario.Show();
         }
 
@@ -49,6 +49,12 @@ namespace dashboard_medios
         private void metroButton6_Click(object sender, EventArgs e)
         {
             sort_orders_hoteles_hdo formlario = new sort_orders_hoteles_hdo();
+            formlario.Show();
+        }
+
+        private void metroButton9_Click(object sender, EventArgs e)
+        {
+            sort_orders_hoteles_coppel formlario = new sort_orders_hoteles_coppel();
             formlario.Show();
         }
     }
