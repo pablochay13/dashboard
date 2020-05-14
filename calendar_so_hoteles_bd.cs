@@ -52,6 +52,7 @@ namespace dashboard_medios
                         fecha_evento = Convert.ToString(reader["fecha_inicio"]);
 
                         calendar_full.AddDate(Convert.ToDateTime(fecha_evento), Color.Yellow, 2);
+                        //calendar_full.DataBindings.Add(fecha_evento);
                     }
 
                     con.Close();
@@ -76,7 +77,7 @@ namespace dashboard_medios
                     {
                         fecha_evento = Convert.ToString(reader["fecha_inicio"]);
 
-                        calendar_full.AddDate(Convert.ToDateTime(fecha_evento), Color.Yellow, 2);
+                        calendar_full.SelectedDates.Add(fecha_evento);
                     }
 
                     con.Close();
@@ -101,7 +102,7 @@ namespace dashboard_medios
                     {
                         fecha_evento = Convert.ToString(reader["fecha_inicio"]);
 
-                        calendar_full.AddDate(Convert.ToDateTime(fecha_evento), Color.Yellow, 2);
+                        calendar_full.SelectedDates.Add(fecha_evento);
                     }
 
                     con.Close();
@@ -155,7 +156,7 @@ namespace dashboard_medios
             {
                 fecha_evento = Convert.ToString(reader["fecha_inicio"]);
 
-                calendar_full.AddDate(Convert.ToDateTime(fecha_evento), Color.Yellow, 2);
+                calendar_full.SelectedDates.Add(fecha_evento);
             }
 
             con.Close();
@@ -167,6 +168,11 @@ namespace dashboard_medios
         }
 
         private void calendar_so_hoteles_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void monthControl1_Click(object sender, EventArgs e)
         {
 
         }

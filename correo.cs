@@ -14,11 +14,11 @@ namespace dashboard_medios
          * Gmail:  smtp.gmail.com  puerto:587
          * Hotmail: smtp.liva.com  puerto:25
          */
-        SmtpClient server = new SmtpClient("smtp.gmail.com", 587);
+        SmtpClient server = new SmtpClient("mail.dashboard.ccascarudocun.com", 587);
 
         public correo()
         {
-            server.Credentials = new System.Net.NetworkCredential("pablochay.bd@gmail.com", "Chay1318");
+            server.Credentials = new System.Net.NetworkCredential("dash@dashboard.ccascarudocun.com", "Chay1318");
             server.EnableSsl = true;
         }
 

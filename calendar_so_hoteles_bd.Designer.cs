@@ -29,29 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(calendar_so_hoteles));
-            this.calendar_full = new CalendarViewer.YearCalendarControl();
             this.destino_combo = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.posicion_combo = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.calendar_full = new CalendarViewer.YearCalendarControl();
             this.SuspendLayout();
-            // 
-            // calendar_full
-            // 
-            this.calendar_full.CalendarDimensions = new System.Drawing.Size(4, 3);
-            this.calendar_full.Location = new System.Drawing.Point(38, 171);
-            this.calendar_full.ModeYearLess = false;
-            this.calendar_full.Name = "calendar_full";
-            this.calendar_full.Size = new System.Drawing.Size(655, 420);
-            this.calendar_full.TabIndex = 0;
-            this.calendar_full.Text = "yearCalendarControl1";
-            this.calendar_full.TitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
             // 
             // destino_combo
             // 
             this.destino_combo.FormattingEnabled = true;
             this.destino_combo.ItemHeight = 23;
-            this.destino_combo.Location = new System.Drawing.Point(99, 109);
+            this.destino_combo.Location = new System.Drawing.Point(128, 109);
             this.destino_combo.Name = "destino_combo";
             this.destino_combo.Size = new System.Drawing.Size(263, 29);
             this.destino_combo.TabIndex = 27;
@@ -61,7 +50,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(99, 87);
+            this.metroLabel1.Location = new System.Drawing.Point(128, 87);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(120, 19);
             this.metroLabel1.TabIndex = 26;
@@ -76,7 +65,7 @@
             "Primera",
             "Segunda",
             "Tercera"});
-            this.posicion_combo.Location = new System.Drawing.Point(368, 109);
+            this.posicion_combo.Location = new System.Drawing.Point(397, 109);
             this.posicion_combo.Name = "posicion_combo";
             this.posicion_combo.Size = new System.Drawing.Size(263, 29);
             this.posicion_combo.TabIndex = 31;
@@ -86,23 +75,34 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(368, 87);
+            this.metroLabel5.Location = new System.Drawing.Point(397, 87);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(59, 19);
             this.metroLabel5.TabIndex = 30;
             this.metroLabel5.Text = "Posición:";
             this.metroLabel5.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
+            // calendar_full
+            // 
+            this.calendar_full.CalendarDimensions = new System.Drawing.Size(4, 3);
+            this.calendar_full.Location = new System.Drawing.Point(59, 144);
+            this.calendar_full.ModeYearLess = false;
+            this.calendar_full.Name = "calendar_full";
+            this.calendar_full.Size = new System.Drawing.Size(655, 420);
+            this.calendar_full.TabIndex = 38;
+            this.calendar_full.Text = "yearCalendarControl1";
+            this.calendar_full.TitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
+            // 
             // calendar_so_hoteles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 658);
+            this.ClientSize = new System.Drawing.Size(789, 620);
+            this.Controls.Add(this.calendar_full);
             this.Controls.Add(this.posicion_combo);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.destino_combo);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.calendar_full);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "calendar_so_hoteles";
@@ -115,11 +115,10 @@
         }
 
         #endregion
-
-        private CalendarViewer.YearCalendarControl calendar_full;
         private MetroFramework.Controls.MetroComboBox destino_combo;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroComboBox posicion_combo;
         private MetroFramework.Controls.MetroLabel metroLabel5;
+        private CalendarViewer.YearCalendarControl calendar_full;
     }
 }

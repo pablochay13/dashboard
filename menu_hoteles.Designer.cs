@@ -138,8 +138,9 @@
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(115, 29);
             this.metroButton4.TabIndex = 19;
-            this.metroButton4.Text = "Calendario";
+            this.metroButton4.Text = "LATAM";
             this.metroButton4.UseSelectable = true;
+            this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
             // 
             // metroButton5
             // 
@@ -147,8 +148,9 @@
             this.metroButton5.Name = "metroButton5";
             this.metroButton5.Size = new System.Drawing.Size(115, 29);
             this.metroButton5.TabIndex = 18;
-            this.metroButton5.Text = "Listar";
+            this.metroButton5.Text = "Brasil";
             this.metroButton5.UseSelectable = true;
+            this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
             // 
             // metroButton6
             // 
@@ -156,7 +158,7 @@
             this.metroButton6.Name = "metroButton6";
             this.metroButton6.Size = new System.Drawing.Size(115, 29);
             this.metroButton6.TabIndex = 17;
-            this.metroButton6.Text = "Programar";
+            this.metroButton6.Text = "México";
             this.metroButton6.UseSelectable = true;
             this.metroButton6.Click += new System.EventHandler(this.metroButton6_Click);
             // 

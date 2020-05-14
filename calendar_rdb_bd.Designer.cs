@@ -85,11 +85,11 @@
             // calendar_full
             // 
             this.calendar_full.CalendarDimensions = new System.Drawing.Size(4, 3);
-            this.calendar_full.Location = new System.Drawing.Point(38, 161);
+            this.calendar_full.Location = new System.Drawing.Point(40, 134);
             this.calendar_full.ModeYearLess = false;
             this.calendar_full.Name = "calendar_full";
             this.calendar_full.Size = new System.Drawing.Size(655, 420);
-            this.calendar_full.TabIndex = 32;
+            this.calendar_full.TabIndex = 37;
             this.calendar_full.Text = "yearCalendarControl1";
             this.calendar_full.TitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
             // 
@@ -97,12 +97,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 658);
+            this.ClientSize = new System.Drawing.Size(731, 585);
+            this.Controls.Add(this.calendar_full);
             this.Controls.Add(this.posicion_combo);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.destino_combo);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.calendar_full);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "calendar_rdb_bd";

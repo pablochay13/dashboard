@@ -57,5 +57,17 @@ namespace dashboard_medios
             sort_orders_hoteles_coppel formlario = new sort_orders_hoteles_coppel();
             formlario.Show();
         }
+
+        private void metroButton5_Click(object sender, EventArgs e)
+        {
+            sort_orders_hoteles_hdo_br formlario = new sort_orders_hoteles_hdo_br();
+            formlario.Show();
+        }
+
+        private void metroButton4_Click(object sender, EventArgs e)
+        {
+            sort_orders_hoteles_hdo_latam formlario = new sort_orders_hoteles_hdo_latam();
+            formlario.Show();
+        }
     }
 }

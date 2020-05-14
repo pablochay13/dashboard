@@ -182,8 +182,7 @@ namespace dashboard_medios
                 html += "</table>";
 
 
-                //Sending the DataGridView's HTML in Email.
-                using (MailMessage mm = new MailMessage("pablochay.bd@gmail.com", "maria.paxtian@bestday.com"))
+                using (MailMessage mm = new MailMessage("pablo.chay@bestday.com", "maria.paxtian@bestday.com"))
                 {
                     MailAddress copy = new MailAddress("pamador@bestday.com");
                     mm.CC.Add(copy);
@@ -191,9 +190,9 @@ namespace dashboard_medios
                     mm.Body = html;
                     mm.IsBodyHtml = true;
                     SmtpClient smtp = new SmtpClient();
-                    smtp.Host = "smtp.gmail.com";
+                    smtp.Host = "smtp.office365.com";
                     smtp.EnableSsl = true;
-                    NetworkCredential NetworkCred = new NetworkCredential(mm.From.Address, "Chay1318");
+                    NetworkCredential NetworkCred = new NetworkCredential(mm.From.Address, "N23mSe3Li");
                     smtp.UseDefaultCredentials = true;
                     smtp.Credentials = NetworkCred;
                     smtp.Port = 587;

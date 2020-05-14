@@ -35,11 +35,11 @@
             // calendar_full
             // 
             this.calendar_full.CalendarDimensions = new System.Drawing.Size(4, 3);
-            this.calendar_full.Location = new System.Drawing.Point(38, 129);
+            this.calendar_full.Location = new System.Drawing.Point(38, 119);
             this.calendar_full.ModeYearLess = false;
             this.calendar_full.Name = "calendar_full";
             this.calendar_full.Size = new System.Drawing.Size(655, 420);
-            this.calendar_full.TabIndex = 42;
+            this.calendar_full.TabIndex = 38;
             this.calendar_full.Text = "yearCalendarControl1";
             this.calendar_full.TitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
             // 
@@ -60,6 +60,7 @@
         }
 
         #endregion
+
         private CalendarViewer.YearCalendarControl calendar_full;
     }
 }
